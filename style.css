@@ -810,3 +810,69 @@ body.modal-open{overflow:hidden}
 @media(max-width:480px){
     .who-grid{grid-template-columns:1fr}
 }
+
+/* --- ROADMAP PAGE: WEEK CARDS --- */
+.roadmap-progress-container{max-width:700px;margin:0 auto 48px}
+.roadmap-progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.roadmap-progress-fill{height:100%;background:linear-gradient(90deg,var(--blue-500),#6366f1,var(--green-500),#f59e0b);border-radius:3px;transition:width 1.5s ease}
+.roadmap-progress-labels{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--text-muted)}
+.roadmap-progress-labels span{padding:4px 12px;border-radius:var(--radius-full);transition:all var(--transition-fast)}
+.roadmap-progress-labels span.active{background:var(--blue-50);color:var(--blue-600)}
+.week-cards{display:flex;flex-direction:column;align-items:center;gap:0;max-width:700px;margin:0 auto}
+.week-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:28px;width:100%;transition:all var(--transition-base);position:relative;overflow:hidden}
+.week-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-xl);border-color:var(--blue-300)}
+.week-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),#6366f1);opacity:0;transition:opacity var(--transition-base)}
+.week-card:hover::before{opacity:1}
+.week-card[data-week="2"]::before{background:linear-gradient(90deg,var(--green-500),#34d399)}
+.week-card[data-week="3"]::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.week-card[data-week="4"]::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.week-card-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.week-number{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--blue-500),var(--blue-600));flex-shrink:0}
+.week-number.green{background:linear-gradient(135deg,var(--green-500),#059669)}
+.week-number.purple{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+.week-number.amber{background:linear-gradient(135deg,#f59e0b,#d97706)}
+.week-info{flex:1;min-width:0}
+.week-days{font-size:.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
+.week-title{font-family:var(--font-heading);font-size:1.1rem;font-weight:800;color:var(--text-primary);margin:0}
+.week-status{font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:var(--radius-full);background:var(--blue-50);color:var(--blue-600);text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.week-status.green{background:var(--green-50);color:#047857}
+.week-status.purple{background:#f5f3ff;color:#6d28d9}
+.week-status.amber{background:#fffbeb;color:#b45309}
+.week-desc{font-size:.88rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.6}
+.week-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.skill-pill{display:inline-block;padding:5px 10px;border-radius:var(--radius-md);font-size:.72rem;font-weight:600;border:1px solid transparent;transition:all var(--transition-fast)}
+.skill-pill:hover{transform:translateY(-1px)}
+.skill-pill.blue{background:var(--blue-50);color:var(--blue-600);border-color:var(--blue-200)}
+.skill-pill.green{background:var(--green-50);color:#047857;border-color:#a7f3d0}
+.skill-pill.purple{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.skill-pill.amber{background:#fffbeb;color:#b45309;border-color:#fde68a}
+.week-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
+.week-hours{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--text-muted)}
+.week-hours svg{opacity:.6}
+.week-difficulty{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--blue-600)}
+.week-difficulty.green{color:#047857}
+.week-difficulty.purple{color:#6d28d9}
+.week-difficulty.amber{color:#b45309}
+.week-connector{display:flex;flex-direction:column;align-items:center;height:40px;position:relative}
+.connector-line{width:2px;height:100%;background:linear-gradient(180deg,var(--blue-300),var(--green-300))}
+.connector-dot{width:10px;height:10px;border-radius:50%;background:var(--green-500);position:absolute;top:50%;transform:translateY(-50%);border:2px solid var(--white);box-shadow:0 0 0 2px var(--green-200)}
+.milestones-container{max-width:700px;margin:48px auto 0;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:28px}
+.milestones-title{font-family:var(--font-heading);font-size:1.1rem;font-weight:800;color:var(--text-primary);margin-bottom:20px;text-align:center}
+.milestones-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.milestone{display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg-light);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+.milestone:hover{background:var(--green-50);transform:translateX(4px)}
+.milestone-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.milestone-icon.check{background:var(--green-500);color:#fff}
+.milestone-icon.star{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+.milestone-text{font-size:.85rem;color:var(--text-secondary)}
+.milestone-text strong{color:var(--text-primary);font-weight:700}
+.b2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b2b-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:28px;transition:all var(--transition-base)}
+.b2b-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-xl);border-color:var(--blue-300)}
+.b2b-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;background:var(--blue-50)}
+.b2b-icon.green{background:var(--green-50)}
+.b2b-icon.amber{background:#fffbeb}
+.b2b-card h3{font-size:1rem;font-weight:800;margin-bottom:8px}
+.b2b-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+@media(max-width:900px){.b2b-grid{grid-template-columns:1fr}.milestones-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.week-card-header{flex-wrap:wrap}.week-status{order:3;margin-top:4px}}
