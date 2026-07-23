@@ -13,8 +13,13 @@ var Auth = (function () {
             return null;
         }
         if (typeof window.supabase === 'undefined' || !window.supabase.createClient) return null;
-        supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
-        return supabase;
+        try {
+            supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+            return supabase;
+        } catch (err) {
+            console.warn('Supabase client init failed, using local auth:', err.message);
+            return null;
+        }
     }
 
     function isLoggedIn() {
@@ -62,7 +67,8 @@ var Auth = (function () {
     }
 
     async function signUp(email, password, fullName) {
-        var client = getClient();
+        var client;
+        try { client = getClient(); } catch (e) { client = null; }
         if (!client) {
             return simulateAuth(email, fullName, password);
         }
@@ -86,7 +92,8 @@ var Auth = (function () {
     }
 
     async function signIn(email, password) {
-        var client = getClient();
+        var client;
+        try { client = getClient(); } catch (e) { client = null; }
         if (!client) {
             return simulateAuth(email, email.split('@')[0], password);
         }
@@ -107,7 +114,8 @@ var Auth = (function () {
     }
 
     async function signInWithGoogle() {
-        var client = getClient();
+        var client;
+        try { client = getClient(); } catch (e) { client = null; }
         if (!client) {
             var fakeUser = { id: 'g_' + Date.now(), email: 'student@gmail.com', name: 'Google Student', role: 'student' };
             setUser(fakeUser);
