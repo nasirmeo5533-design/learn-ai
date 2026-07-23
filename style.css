@@ -224,21 +224,34 @@ body.announcement-hidden .page-header{padding-top:calc(var(--header-height) + 20
 .build-card .build-tag{display:inline-block;padding:3px 10px;border-radius:var(--radius-full);font-size:.68rem;font-weight:600;margin-top:10px;background:var(--blue-50);color:var(--blue-600)}
 
 /* --- ROADMAP --- */
-.roadmap-timeline{position:relative;max-width:900px;margin:0 auto}
-.roadmap-month{margin-bottom:48px;position:relative}
-.roadmap-month:last-child{margin-bottom:0}
-.roadmap-month-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-.roadmap-month-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0;background:linear-gradient(135deg,var(--blue-600),#4f46e5)}
-.roadmap-month-info h3{font-size:1.2rem;font-weight:700;color:var(--text-primary)}
-.roadmap-month-info p{font-size:.85rem;color:var(--text-muted)}
-.roadmap-skills{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.roadmap-skill{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);font-size:.88rem;color:var(--text-secondary);transition:all var(--transition-fast)}
-.roadmap-skill:hover{border-color:var(--blue-200);background:var(--blue-50);color:var(--text-primary)}
-.roadmap-skill .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.roadmap-skill .dot.blue{background:var(--blue-500)}
-.roadmap-skill .dot.green{background:var(--green-500)}
-.roadmap-skill .dot.purple{background:#7c3aed}
-.roadmap-skill .dot.amber{background:var(--amber-500)}
+/* --- 90-DAY ROADMAP CARDS --- */
+.roadmap-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.roadmap-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:28px 24px;position:relative;overflow:hidden;transition:all var(--transition-base)}
+.roadmap-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--blue-300)}
+.roadmap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),#6366f1);opacity:0;transition:opacity var(--transition-base)}
+.roadmap-card:hover::before{opacity:1}
+.roadmap-card[data-phase="2"]::before{background:linear-gradient(90deg,var(--green-500),#34d399)}
+.roadmap-card[data-phase="3"]::before{background:linear-gradient(90deg,#7c3aed,#c084fc)}
+.roadmap-card-connector{position:absolute;top:50%;right:-14px;width:28px;height:3px;background:linear-gradient(90deg,var(--blue-200),var(--border));z-index:1}
+.roadmap-card:last-child .roadmap-card-connector{display:none}
+.roadmap-card-badge{display:inline-block;background:linear-gradient(135deg,var(--blue-600),#4f46e5);color:#fff;font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.roadmap-card[data-phase="2"] .roadmap-card-badge{background:linear-gradient(135deg,var(--green-500),#059669)}
+.roadmap-card[data-phase="3"] .roadmap-card-badge{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
+.roadmap-card-month{font-size:.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.roadmap-card-title{font-family:var(--font-heading);font-size:1.2rem;font-weight:800;color:var(--text-primary);margin-bottom:8px}
+.roadmap-card-desc{font-size:.88rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.5}
+.roadmap-card-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.skill-tag{display:inline-block;padding:5px 10px;border-radius:var(--radius-md);font-size:.75rem;font-weight:600;border:1px solid transparent;transition:all var(--transition-fast)}
+.skill-tag:hover{transform:translateY(-1px)}
+.skill-tag.blue{background:var(--blue-50);color:var(--blue-600);border-color:var(--blue-200)}
+.skill-tag.green{background:var(--green-50);color:#047857;border-color:#a7f3d0}
+.skill-tag.purple{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.roadmap-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
+.roadmap-card-duration{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--text-muted)}
+.roadmap-card-duration svg{opacity:.6}
+.roadmap-card-status{font-size:.7rem;font-weight:700;color:var(--blue-600);text-transform:uppercase;letter-spacing:.5px;background:var(--blue-50);padding:4px 10px;border-radius:var(--radius-full)}
+.roadmap-card[data-phase="2"] .roadmap-card-status{color:#047857;background:var(--green-50)}
+.roadmap-card[data-phase="3"] .roadmap-card-status{color:#6d28d9;background:#f5f3ff}
 
 /* --- CAREER TRACKS --- */
 .tracks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
