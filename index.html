@@ -56,6 +56,9 @@
         ]
     }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -116,28 +119,34 @@
                         </div>
                     </div>
                     <div class="hero-visual">
-                        <div class="hero-card">
-                            <div class="floating-badge top-right">&#127942; Certificate Ready</div>
-                            <div class="floating-badge bottom-left">&#128172; WhatsApp Support</div>
-                            <div class="hero-card-header">
-                                <div class="hero-card-avatar">LA</div>
-                                <div class="hero-card-info">
-                                    <h4>Your Learning Dashboard</h4>
-                                    <p>Track progress across 5 stages</p>
+                        <div class="laptop-mockup">
+                            <div class="laptop-screen">
+                                <div class="laptop-notch"></div>
+                                <div class="hero-card">
+                                    <div class="hero-card-header">
+                                        <div class="hero-card-avatar">LA</div>
+                                        <div class="hero-card-info">
+                                            <h4>Your Learning Dashboard</h4>
+                                            <p>Track progress across 5 stages</p>
+                                        </div>
+                                    </div>
+                                    <div class="hero-card-progress">
+                                        <div class="hero-progress-header"><span>Your Journey</span><span>Stage 1 of 5</span></div>
+                                        <div class="progress-bar"><div class="fill" style="width:20%"></div></div>
+                                    </div>
+                                    <div class="hero-card-modules">
+                                        <div class="module-row"><span class="check done">&#10003;</span> Stage 1: AI Fundamentals</div>
+                                        <div class="module-row"><span class="check done">&#10003;</span> Stage 2: Content Creation</div>
+                                        <div class="module-row"><span class="check pending">&#9675;</span> Stage 3: Automation</div>
+                                        <div class="module-row"><span class="check pending">&#9675;</span> Stage 4: AI Chatbots</div>
+                                        <div class="module-row"><span class="check pending">&#9675;</span> Stage 5: Client Hunting</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hero-card-progress">
-                                <div class="hero-progress-header"><span>Your Journey</span><span>Stage 1 of 5</span></div>
-                                <div class="progress-bar"><div class="fill" style="width:20%"></div></div>
-                            </div>
-                            <div class="hero-card-modules">
-                                <div class="module-row"><span class="check done">&#10003;</span> Stage 1: AI Fundamentals</div>
-                                <div class="module-row"><span class="check done">&#10003;</span> Stage 2: Content Creation</div>
-                                <div class="module-row"><span class="check pending">&#9675;</span> Stage 3: Automation</div>
-                                <div class="module-row"><span class="check pending">&#9675;</span> Stage 4: AI Chatbots</div>
-                                <div class="module-row"><span class="check pending">&#9675;</span> Stage 5: Client Hunting</div>
-                            </div>
+                            <div class="laptop-base"></div>
                         </div>
+                        <div class="floating-badge top-right">&#127942; Certificate Ready</div>
+                        <div class="floating-badge bottom-left">&#128172; WhatsApp Support</div>
                     </div>
                 </div>
             </div>
@@ -148,13 +157,14 @@
             <div class="container">
                 <p class="label">Official Tools We Teach</p>
                 <div class="tools-grid">
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg> ChatGPT</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.7" y1="10.7" x2="15.3" y2="7.3"/><line x1="8.7" y1="13.3" x2="15.3" y2="16.7"/></svg> N8n</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> AI Image Generator</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> AI Voice Tool</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16.01"/><line x1="16" y1="16" x2="16" y2="16.01"/></svg> AI Chatbot Builder</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Make.com</div>
-                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> Canva</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#10a37f;color:#fff">G</div> ChatGPT</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#ea4b71;color:#fff">N</div> N8n</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#6366f1;color:#fff">Gem</div> Gemini</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#f59e0b;color:#fff">NB</div> Nano Banana</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#8b5cf6;color:#fff">S</div> Seedance</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#ec4899;color:#fff">HA</div> Hermes Agent</div>
+                    <div class="tool-item"><div class="tool-logo" style="background:#06b6d4;color:#fff">C</div> Canva</div>
+                </div>
                 </div>
             </div>
         </section>
@@ -426,8 +436,10 @@
                 <div class="text-center">
                     <div class="section-eyebrow reveal">&#128176; Simple Pricing</div>
                     <h2 class="section-title reveal">Invest in Your <span class="gradient">AI Future</span></h2>
-                    <p class="section-subtitle reveal">Every plan includes Free eBook. Start with a genuine 7-Day Free Trial — no credit card required.</p>
+                    <p class="section-subtitle reveal">Every plan includes Free eBook. Start with a genuine 3-Day Free Trial — no credit card required.</p>
                 </div>
+
+                <!-- PRICING CARDS -->
                 <div class="pricing-grid">
                     <div class="pricing-card reveal rd1">
                         <span class="popular-badge" style="background:#e0f2fe;color:#0369a1">&#128214; Start Here</span>
@@ -448,23 +460,23 @@
                         <a href="https://wa.me/923703159642?text=Hi!%20I%20want%20the%20Learn%20AI%20Starter%20plan%20(PKR%202%2C499)." class="btn btn-secondary dynamic-whatsapp-link">Get Starter &rarr;</a>
                     </div>
                     <div class="pricing-card featured reveal rd2">
-                        <span class="popular-badge">&#128640; Most Popular — Installment Plan</span>
+                        <span class="popular-badge">&#128640; Most Popular</span>
                         <h3>Learn AI Pro</h3>
-                        <div class="price">PKR 2,000 <span>/ Month</span></div>
-                        <div class="original-price">Total PKR 6,000 (3 Months)</div>
-                        <div class="note" style="color:#059669;font-weight:700">&#128737; 7-Day 100% Money-Back Guarantee</div>
+                        <div class="price">PKR 3,000 <span>/ Month</span></div>
+                        <div class="original-price">1-Month Full Access</div>
+                        <div class="note" style="color:#059669;font-weight:700">&#128737; 3-Day 100% Money-Back Guarantee</div>
                         <ul class="pricing-features">
-                            <li><span class="ck">&#10003;</span> <strong>Pay PKR 2,000 to Start</strong> — 2 more payments of PKR 2,000</li>
-                            <li><span class="ck">&#10003;</span> Full Access to All 5 Stages (90-Day Roadmap)</li>
+                            <li><span class="ck">&#10003;</span> <strong>Pay PKR 3,000 for Full Access</strong></li>
+                            <li><span class="ck">&#10003;</span> Full Access to All 5 Stages</li>
                             <li><span class="ck">&#10003;</span> 20+ Video Lessons &amp; 9 Portfolio Projects</li>
                             <li><span class="ck">&#10003;</span> Free eBook: The Generative AI Specialist</li>
                             <li><span class="ck">&#10003;</span> Bonus eBook: Digital Marketing Masterclass</li>
                             <li><span class="ck">&#10003;</span> 100+ Business Prompt Templates</li>
                             <li><span class="ck">&#10003;</span> WhatsApp Priority Support</li>
-                            <li><span class="ck">&#10003;</span> Verified Certificate on Completion</li>
+                            <li><span class="ck">&#10003;</span> Certificate on Completion</li>
                             <li><span class="ck">&#10003;</span> Lifetime Access &amp; Updates</li>
                         </ul>
-                        <a href="https://wa.me/923703159642?text=Hi!%20I%20want%20to%20start%20the%207-day%20free%20trial%20for%20Learn%20AI%20Pro." class="btn btn-primary dynamic-whatsapp-link" data-whatsapp="trial">&#128640; Start 7-Day Free Trial</a>
+                        <a href="https://wa.me/923703159642?text=Hi!%20I%20want%20to%20start%20the%203-day%20free%20trial%20for%20Learn%20AI%20Pro." class="btn btn-primary dynamic-whatsapp-link" data-whatsapp="trial">&#128640; Start 3-Day Free Trial</a>
                     </div>
                     <div class="pricing-card reveal rd3">
                         <h3>AI Business Elite</h3>
@@ -487,6 +499,36 @@
                         <a href="https://wa.me/923703159642?text=Hi!%20I%20want%20to%20enroll%20in%20the%20AI%20Elite%20plan%20(PKR%209%2C999)." class="btn btn-secondary dynamic-whatsapp-link">Go Elite &rarr;</a>
                     </div>
                 </div>
+
+                <!-- COMPARISON TABLE -->
+                <div class="comparison-table reveal" style="margin-top:48px;overflow-x:auto">
+                    <table style="width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);min-width:600px">
+                        <thead>
+                            <tr style="background:linear-gradient(135deg,var(--blue-600),#4f46e5);color:#fff">
+                                <th style="padding:16px 20px;text-align:left;font-size:.88rem;font-weight:700">Feature</th>
+                                <th style="padding:16px 20px;text-align:center;font-size:.88rem;font-weight:700">Starter</th>
+                                <th style="padding:16px 20px;text-align:center;font-size:.88rem;font-weight:700;background:rgba(255,255,255,.15)">Pro &#128640;</th>
+                                <th style="padding:16px 20px;text-align:center;font-size:.88rem;font-weight:700">Elite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Price</td><td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--blue-600)">PKR 2,499</td><td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--blue-600);background:var(--blue-50)">PKR 3,000</td><td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--blue-600)">PKR 9,999</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Duration</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">Lifetime</td><td style="padding:14px 20px;text-align:center;font-size:.88rem;background:var(--blue-50)">1 Month</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">Lifetime</td></tr>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Free Trial</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">&#10003; 3 Days</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Stages 1-2 (Fundamentals)</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Stages 3-5 (Automation &amp; Earning)</td><td style="padding:14px 20px;text-align:center;color:var(--red-500)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Video Lessons</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">8</td><td style="padding:14px 20px;text-align:center;font-size:.88rem;font-weight:700;background:var(--blue-50)">20+</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">20+</td></tr>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Portfolio Projects</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">4</td><td style="padding:14px 20px;text-align:center;font-size:.88rem;font-weight:700;background:var(--blue-50)">9</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">9</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Free eBook</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">&#10003; 2 eBooks</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003; 2 eBooks</td></tr>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Prompt Templates</td><td style="padding:14px 20px;text-align:center;color:var(--red-500)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">100+</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">500+</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">WhatsApp Support</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">Community</td><td style="padding:14px 20px;text-align:center;font-size:.88rem;background:var(--blue-50)">Priority</td><td style="padding:14px 20px;text-align:center;font-size:.88rem">Priority</td></tr>
+                            <tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Certificate</td><td style="padding:14px 20px;text-align:center;color:var(--red-500)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600);background:var(--blue-50)">&#10003;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--slate-50)"><td style="padding:14px 20px;font-weight:600;font-size:.88rem">1-on-1 Mentorship</td><td style="padding:14px 20px;text-align:center;color:var(--red-500)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--red-500);background:var(--blue-50)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                            <tr><td style="padding:14px 20px;font-weight:600;font-size:.88rem">Client Hunting SOPs</td><td style="padding:14px 20px;text-align:center;color:var(--red-500)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--red-500);background:var(--blue-50)">&#10007;</td><td style="padding:14px 20px;text-align:center;color:var(--green-600)">&#10003;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <p class="disclaimer-text"><small>&#9878; <strong>Earnings Disclaimer:</strong> Results vary based on individual effort, skills, and market conditions. No income is guaranteed. View our <a href="terms.html#earnings" style="color:var(--blue-600)">full earnings disclaimer</a>.</small></p>
             </div>
         </section>
@@ -699,7 +741,7 @@
         </div>
     </div>
 
-    <a href="https://wa.me/923703159642" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">&#128172;</a>
+    <a href="https://wa.me/923703159642" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
     <div class="sticky-cta">
         <a href="https://wa.me/923703159642?text=Hi%2C%20I%20want%20to%20start%20the%207-day%20free%20trial." class="btn btn-primary btn-lg" data-whatsapp="trial">&#128640; Start Free Trial — PKR 2,000/Month</a>

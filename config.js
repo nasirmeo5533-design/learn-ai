@@ -3,9 +3,9 @@ const CONFIG = {
     whatsappDisplayNumber: "+92 370 3159642",
     ebook1Title: "The Generative AI Specialist by Abeer Nasir",
     ebook1Url: "https://bit.ly/44sikZs",
-    coursePrice: "PKR 2,000 / Month",
-    courseFullPrice: "PKR 6,000 Total (3 Months)",
-    freeTrialDays: 7,
+    coursePrice: "PKR 3,000 / Month",
+    courseFullPrice: "PKR 3,000 Total (1 Month)",
+    freeTrialDays: 3,
     ga4TrackingId: "G-MEASUREMENT_ID",
     siteUrl: "https://learn-ai-sable-phi.vercel.app",
     siteName: "AI Career Platform",
@@ -26,11 +26,11 @@ function getWhatsAppUrlForEbook() {
 }
 
 function getWhatsAppUrlForTrial() {
-    return getWhatsAppUrl("Hi! I want to claim the 7-Day Free AI Trial.");
+    return getWhatsAppUrl("Hi! I want to claim the 3-Day Free AI Trial.");
 }
 
 function getWhatsAppUrlForEnroll() {
-    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course (PKR 2,000/month installment plan).");
+    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course (PKR 3,000/month).");
 }
 
 function getWhatsAppUrlForContact(name, message) {
@@ -42,5 +42,5 @@ function getWhatsAppUrlWithTrack(trackName) {
 }
 
 function getWhatsAppUrlDefault() {
-    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course & Claim my 7-Day Trial + Free eBook!");
+    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course & Claim my 3-Day Trial + Free eBook!");
 }
