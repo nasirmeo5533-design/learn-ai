@@ -7,6 +7,7 @@
     document.addEventListener('DOMContentLoaded', init);
 
     function init() {
+        initHeroAnimation();
         initAnnouncementBar();
         initTheme();
         initHeader();
@@ -26,6 +27,12 @@
         initDynamicMeta();
         initStickyCta();
         initSmoothAnchors();
+    }
+
+    function initHeroAnimation() {
+        var hero = document.querySelector('.hero');
+        if (!hero) return;
+        setTimeout(function() { hero.classList.add('loaded'); }, 100);
     }
 
     /* --- ANNOUNCEMENT BAR --- */
