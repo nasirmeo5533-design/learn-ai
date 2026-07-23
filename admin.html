@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | AI Masterclass - Control Center</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo"><span class="logo-icon">AI</span> Admin Panel</div>
+            <nav class="admin-nav">
+                <div class="admin-nav-item active" data-tab="overview"><span class="nav-icon">&#128202;</span> Overview</div>
+                <div class="admin-nav-item" data-tab="videos"><span class="nav-icon">&#127909;</span> Course Videos</div>
+                <div class="admin-nav-item" data-tab="reviews"><span class="nav-icon">&#11088;</span> Reviews</div>
+                <div class="admin-nav-item" data-tab="blog"><span class="nav-icon">&#9997;</span> Blog Publisher</div>
+                <div class="admin-nav-item" data-tab="settings"><span class="nav-icon">&#9881;</span> Site Settings</div>
+            </nav>
+            <div class="admin-sidebar-footer">
+                <a href="index.html" class="admin-nav-item" style="padding-left:24px"><span class="nav-icon">&#127968;</span> View Site</a>
+                <div class="admin-nav-item" id="adminLogout" style="padding-left:24px;cursor:pointer"><span class="nav-icon">&#128682;</span> Logout</div>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <h2 id="adminPageTitle">Dashboard Overview</h2>
+                <div class="admin-topbar-user">
+                    <span id="adminUserEmail">admin</span>
+                    <div class="avatar" id="adminAvatar">A</div>
+                </div>
+            </div>
+            <div class="admin-content">
+                <!-- OVERVIEW TAB -->
+                <div class="admin-tab active" id="tab-overview">
+                    <div class="admin-stat-grid">
+                        <div class="admin-stat"><div class="stat-icon blue">&#128218;</div><div class="stat-value" id="statVideos">20</div><div class="stat-label">Course Videos</div></div>
+                        <div class="admin-stat"><div class="stat-icon green">&#11088;</div><div class="stat-value" id="statReviews">3</div><div class="stat-label">Reviews</div></div>
+                        <div class="admin-stat"><div class="stat-icon amber">&#9997;</div><div class="stat-value" id="statBlogs">3</div><div class="stat-label">Blog Posts</div></div>
+                        <div class="admin-stat"><div class="stat-icon red">&#128172;</div><div class="stat-value" id="statWhatsApp">1</div><div class="stat-label">WhatsApp Config</div></div>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Quick Actions</h3>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap">
+                            <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-tab=videos]').click()">Add New Video</button>
+                            <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-tab=reviews]').click()">Add Review</button>
+                            <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-tab=blog]').click()">Write Blog Post</button>
+                            <button class="btn btn-secondary btn-sm" onclick="document.querySelector('[data-tab=settings]').click()">Update Settings</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIDEOS TAB -->
+                <div class="admin-tab" id="tab-videos">
+                    <div class="admin-panel">
+                        <h3>Add / Edit Course Video</h3>
+                        <div class="form-group">
+                            <label>Module ID (e.g. m1, m2 ... m20)</label>
+                            <input type="text" id="vidModuleId" placeholder="m1">
+                        </div>
+                        <div class="form-group">
+                            <label>Stage Number (1-5)</label>
+                            <select id="vidStage"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Module Title</label>
+                            <input type="text" id="vidTitle" placeholder="Module 1: Master ChatGPT Prompt Engineering">
+                        </div>
+                        <div class="form-group">
+                            <label>Module Description</label>
+                            <input type="text" id="vidDesc" placeholder="Chain-of-thought, role prompting, 50+ templates">
+                        </div>
+                        <div class="form-group">
+                            <label>Video URL (YouTube embed or direct link)</label>
+                            <input type="url" id="vidUrl" placeholder="https://www.youtube.com/embed/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Duration (e.g. 45 mins)</label>
+                            <input type="text" id="vidDur" placeholder="45 mins">
+                        </div>
+                        <button class="btn btn-primary" id="vidSave">Save Video</button>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Existing Videos</h3>
+                        <ul class="admin-list" id="vidList"></ul>
+                    </div>
+                </div>
+
+                <!-- REVIEWS TAB -->
+                <div class="admin-tab" id="tab-reviews">
+                    <div class="admin-panel">
+                        <h3>Add / Edit Student Review</h3>
+                        <div class="form-group">
+                            <label>Review ID (e.g. r1, r2)</label>
+                            <input type="text" id="revId" placeholder="r1">
+                        </div>
+                        <div class="form-group">
+                            <label>Student Name</label>
+                            <input type="text" id="revName" placeholder="Ali R.">
+                        </div>
+                        <div class="form-group">
+                            <label>Role / Location</label>
+                            <input type="text" id="revRole" placeholder="E-Commerce Store Owner, Lahore">
+                        </div>
+                        <div class="form-group">
+                            <label>Rating (1-5)</label>
+                            <select id="revRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Review Quote</label>
+                            <textarea id="revQuote" placeholder="The honest approach sold me..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Avatar Image URL (leave blank for default)</label>
+                            <input type="url" id="revAvatar" placeholder="https://images.unsplash.com/photo-...">
+                        </div>
+                        <button class="btn btn-primary" id="revSave">Save Review</button>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Existing Reviews</h3>
+                        <ul class="admin-list" id="revList"></ul>
+                    </div>
+                </div>
+
+                <!-- BLOG TAB -->
+                <div class="admin-tab" id="tab-blog">
+                    <div class="admin-panel">
+                        <h3>Publish New Blog Article</h3>
+                        <div class="form-group">
+                            <label>Article ID (e.g. a1, a4)</label>
+                            <input type="text" id="blogId" placeholder="a4">
+                        </div>
+                        <div class="form-group">
+                            <label>Article Title</label>
+                            <input type="text" id="blogTitle" placeholder="Best AI Tools for Beginners in 2026">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <input type="text" id="blogCategory" placeholder="Free Tools">
+                        </div>
+                        <div class="form-group">
+                            <label>Featured Image URL</label>
+                            <input type="url" id="blogImage" placeholder="https://images.unsplash.com/photo-...">
+                        </div>
+                        <div class="form-group">
+                            <label>Article Content (HTML supported)</label>
+                            <textarea id="blogContent" style="min-height:250px" placeholder="Write your article content here..."></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="blogSave">Publish Article</button>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Published Articles</h3>
+                        <ul class="admin-list" id="blogList"></ul>
+                    </div>
+                </div>
+
+                <!-- SETTINGS TAB -->
+                <div class="admin-tab" id="tab-settings">
+                    <div class="admin-panel">
+                        <h3>WhatsApp Configuration</h3>
+                        <div class="form-group">
+                            <label>WhatsApp Number (with country code)</label>
+                            <input type="text" id="setWhatsApp" placeholder="923703159642">
+                        </div>
+                        <div class="form-group">
+                            <label>Display Number</label>
+                            <input type="text" id="setWhatsAppDisplay" placeholder="+92 370 3159642">
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Course Pricing</h3>
+                        <div class="form-group">
+                            <label>Current Price</label>
+                            <input type="text" id="setPrice" placeholder="PKR 4,999">
+                        </div>
+                        <div class="form-group">
+                            <label>Original Price (strikethrough)</label>
+                            <input type="text" id="setOrigPrice" placeholder="PKR 15,000">
+                        </div>
+                        <div class="form-group">
+                            <label>Free Trial Duration (days)</label>
+                            <input type="number" id="setTrialDays" placeholder="7" min="1" max="30">
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>eBook Links</h3>
+                        <div class="form-group">
+                            <label>eBook #1 URL</label>
+                            <input type="url" id="setEbook1" placeholder="https://bit.ly/...">
+                        </div>
+                        <div class="form-group">
+                            <label>eBook #2 URL</label>
+                            <input type="url" id="setEbook2" placeholder="https://bit.ly/...">
+                        </div>
+                    </div>
+                    <div class="admin-panel">
+                        <h3>Site Information</h3>
+                        <div class="form-group">
+                            <label>Site Name</label>
+                            <input type="text" id="setSiteName" placeholder="AI Masterclass">
+                        </div>
+                        <div class="form-group">
+                            <label>Site URL</label>
+                            <input type="url" id="setSiteUrl" placeholder="https://yourdomain.com">
+                        </div>
+                        <div class="form-group">
+                            <label>GA4 Measurement ID</label>
+                            <input type="text" id="setGA4" placeholder="G-XXXXXXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Admin Email</label>
+                            <input type="email" id="setAdminEmail" placeholder="admin@aimasterclass.com">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg" id="settingsSave">Save All Settings</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+    <script>
+    (function() {
+        'use strict';
+        if (!Auth.requireAuth()) return;
+        if (!Auth.isAdmin()) { window.location.href = 'dashboard.html'; return; }
+
+        var user = Auth.getUser();
+        document.getElementById('adminUserEmail').textContent = user.email;
+        document.getElementById('adminAvatar').textContent = (user.name || 'A').charAt(0).toUpperCase();
+
+        // Tab navigation
+        var navItems = document.querySelectorAll('.admin-nav-item[data-tab]');
+        var tabs = document.querySelectorAll('.admin-tab');
+        var titles = { overview: 'Dashboard Overview', videos: 'Course Videos & Lessons', reviews: 'Reviews & Avatars', blog: 'SEO Blog Publisher', settings: 'Site Settings' };
+
+        navItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var tab = item.getAttribute('data-tab');
+                navItems.forEach(function(n) { n.classList.remove('active'); });
+                item.classList.add('active');
+                tabs.forEach(function(t) { t.classList.remove('active'); });
+                document.getElementById('tab-' + tab).classList.add('active');
+                document.getElementById('adminPageTitle').textContent = titles[tab] || tab;
+            });
+        });
+
+        // Load data
+        var videos = JSON.parse(localStorage.getItem('am_videos') || '[]');
+        var reviews = JSON.parse(localStorage.getItem('am_reviews') || '[]');
+        var blogs = JSON.parse(localStorage.getItem('am_blogs') || '[]');
+        var settings = JSON.parse(localStorage.getItem('am_settings') || '{}');
+
+        renderVideos();
+        renderReviews();
+        renderBlogs();
+        loadSettings();
+
+        // --- VIDEOS ---
+        document.getElementById('vidSave').addEventListener('click', function() {
+            var id = document.getElementById('vidModuleId').value.trim();
+            var stage = document.getElementById('vidStage').value;
+            var title = document.getElementById('vidTitle').value.trim();
+            var desc = document.getElementById('vidDesc').value.trim();
+            var url = document.getElementById('vidUrl').value.trim();
+            var dur = document.getElementById('vidDur').value.trim();
+            if (!id || !title || !url) { alert('Please fill in Module ID, Title, and URL.'); return; }
+            var existing = videos.findIndex(function(v) { return v.id === id; });
+            var video = { id: id, stage: stage, title: title, desc: desc, url: url, dur: dur || '30 mins' };
+            if (existing >= 0) videos[existing] = video; else videos.push(video);
+            localStorage.setItem('am_videos', JSON.stringify(videos));
+            renderVideos();
+            clearVideoForm();
+            alert('Video saved!');
+        });
+
+        function renderVideos() {
+            var list = document.getElementById('vidList');
+            list.innerHTML = '';
+            document.getElementById('statVideos').textContent = videos.length || 20;
+            if (videos.length === 0) { list.innerHTML = '<li style="padding:20px;text-align:center;color:var(--text-muted);font-size:.88rem">No custom videos added. Defaults from syllabus are used.</li>'; return; }
+            videos.forEach(function(v, i) {
+                var li = document.createElement('li');
+                li.className = 'admin-list-item';
+                li.innerHTML = '<div class="item-info"><h4>' + v.id.toUpperCase() + ' - Stage ' + v.stage + '</h4><p>' + v.title + ' (' + v.dur + ')</p></div><div class="item-actions"><button class="btn btn-secondary btn-xs" data-edit="' + i + '">Edit</button><button class="btn btn-danger btn-xs" data-del="' + i + '">Delete</button></div>';
+                list.appendChild(li);
+            });
+            list.querySelectorAll('[data-del]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    videos.splice(parseInt(btn.getAttribute('data-del')), 1);
+                    localStorage.setItem('am_videos', JSON.stringify(videos));
+                    renderVideos();
+                });
+            });
+            list.querySelectorAll('[data-edit]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var v = videos[parseInt(btn.getAttribute('data-edit'))];
+                    document.getElementById('vidModuleId').value = v.id;
+                    document.getElementById('vidStage').value = v.stage;
+                    document.getElementById('vidTitle').value = v.title;
+                    document.getElementById('vidDesc').value = v.desc;
+                    document.getElementById('vidUrl').value = v.url;
+                    document.getElementById('vidDur').value = v.dur;
+                });
+            });
+        }
+
+        function clearVideoForm() {
+            ['vidModuleId','vidTitle','vidDesc','vidUrl','vidDur'].forEach(function(id) { document.getElementById(id).value = ''; });
+            document.getElementById('vidStage').value = '1';
+        }
+
+        // --- REVIEWS ---
+        document.getElementById('revSave').addEventListener('click', function() {
+            var id = document.getElementById('revId').value.trim();
+            var name = document.getElementById('revName').value.trim();
+            var role = document.getElementById('revRole').value.trim();
+            var rating = document.getElementById('revRating').value;
+            var quote = document.getElementById('revQuote').value.trim();
+            var avatar = document.getElementById('revAvatar').value.trim();
+            if (!id || !name || !quote) { alert('Please fill in Review ID, Name, and Quote.'); return; }
+            var existing = reviews.findIndex(function(r) { return r.id === id; });
+            var review = { id: id, name: name, role: role, rating: rating, quote: quote, avatar: avatar };
+            if (existing >= 0) reviews[existing] = review; else reviews.push(review);
+            localStorage.setItem('am_reviews', JSON.stringify(reviews));
+            renderReviews();
+            clearReviewForm();
+            alert('Review saved!');
+        });
+
+        function renderReviews() {
+            var list = document.getElementById('revList');
+            list.innerHTML = '';
+            document.getElementById('statReviews').textContent = reviews.length || 3;
+            if (reviews.length === 0) { list.innerHTML = '<li style="padding:20px;text-align:center;color:var(--text-muted);font-size:.88rem">No custom reviews added. Defaults are used.</li>'; return; }
+            reviews.forEach(function(r, i) {
+                var li = document.createElement('li');
+                li.className = 'admin-list-item';
+                li.innerHTML = '<div class="item-info"><h4>' + r.name + ' (' + r.rating + '&#9733;)</h4><p>' + r.quote.substring(0, 60) + '...</p></div><div class="item-actions"><button class="btn btn-secondary btn-xs" data-edit="' + i + '">Edit</button><button class="btn btn-danger btn-xs" data-del="' + i + '">Delete</button></div>';
+                list.appendChild(li);
+            });
+            list.querySelectorAll('[data-del]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    reviews.splice(parseInt(btn.getAttribute('data-del')), 1);
+                    localStorage.setItem('am_reviews', JSON.stringify(reviews));
+                    renderReviews();
+                });
+            });
+            list.querySelectorAll('[data-edit]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var r = reviews[parseInt(btn.getAttribute('data-edit'))];
+                    document.getElementById('revId').value = r.id;
+                    document.getElementById('revName').value = r.name;
+                    document.getElementById('revRole').value = r.role;
+                    document.getElementById('revRating').value = r.rating;
+                    document.getElementById('revQuote').value = r.quote;
+                    document.getElementById('revAvatar').value = r.avatar;
+                });
+            });
+        }
+
+        function clearReviewForm() {
+            ['revId','revName','revRole','revQuote','revAvatar'].forEach(function(id) { document.getElementById(id).value = ''; });
+            document.getElementById('revRating').value = '5';
+        }
+
+        // --- BLOG ---
+        document.getElementById('blogSave').addEventListener('click', function() {
+            var id = document.getElementById('blogId').value.trim();
+            var title = document.getElementById('blogTitle').value.trim();
+            var category = document.getElementById('blogCategory').value.trim();
+            var image = document.getElementById('blogImage').value.trim();
+            var content = document.getElementById('blogContent').value.trim();
+            if (!id || !title || !content) { alert('Please fill in Article ID, Title, and Content.'); return; }
+            var existing = blogs.findIndex(function(b) { return b.id === id; });
+            var article = { id: id, title: title, category: category, image: image, content: content, date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) };
+            if (existing >= 0) blogs[existing] = article; else blogs.push(article);
+            localStorage.setItem('am_blogs', JSON.stringify(blogs));
+            renderBlogs();
+            clearBlogForm();
+            alert('Article published!');
+        });
+
+        function renderBlogs() {
+            var list = document.getElementById('blogList');
+            list.innerHTML = '';
+            document.getElementById('statBlogs').textContent = blogs.length || 3;
+            if (blogs.length === 0) { list.innerHTML = '<li style="padding:20px;text-align:center;color:var(--text-muted);font-size:.88rem">No published articles yet.</li>'; return; }
+            blogs.forEach(function(b, i) {
+                var li = document.createElement('li');
+                li.className = 'admin-list-item';
+                li.innerHTML = '<div class="item-info"><h4>' + b.title + '</h4><p>' + (b.category || 'Uncategorized') + ' &bull; ' + b.date + '</p></div><div class="item-actions"><button class="btn btn-secondary btn-xs" data-edit="' + i + '">Edit</button><button class="btn btn-danger btn-xs" data-del="' + i + '">Delete</button></div>';
+                list.appendChild(li);
+            });
+            list.querySelectorAll('[data-del]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    blogs.splice(parseInt(btn.getAttribute('data-del')), 1);
+                    localStorage.setItem('am_blogs', JSON.stringify(blogs));
+                    renderBlogs();
+                });
+            });
+            list.querySelectorAll('[data-edit]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var b = blogs[parseInt(btn.getAttribute('data-edit'))];
+                    document.getElementById('blogId').value = b.id;
+                    document.getElementById('blogTitle').value = b.title;
+                    document.getElementById('blogCategory').value = b.category;
+                    document.getElementById('blogImage').value = b.image;
+                    document.getElementById('blogContent').value = b.content;
+                });
+            });
+        }
+
+        function clearBlogForm() {
+            ['blogId','blogTitle','blogCategory','blogImage','blogContent'].forEach(function(id) { document.getElementById(id).value = ''; });
+        }
+
+        // --- SETTINGS ---
+        function loadSettings() {
+            document.getElementById('setWhatsApp').value = settings.whatsappNumber || CONFIG.whatsappNumber;
+            document.getElementById('setWhatsAppDisplay').value = settings.whatsappDisplayNumber || CONFIG.whatsappDisplayNumber;
+            document.getElementById('setPrice').value = settings.coursePrice || CONFIG.coursePrice;
+            document.getElementById('setOrigPrice').value = settings.courseOriginalPrice || CONFIG.courseOriginalPrice;
+            document.getElementById('setTrialDays').value = settings.freeTrialDays || CONFIG.freeTrialDays;
+            document.getElementById('setEbook1').value = settings.ebook1Url || CONFIG.ebook1Url;
+            document.getElementById('setEbook2').value = settings.ebook2Url || CONFIG.ebook2Url;
+            document.getElementById('setSiteName').value = settings.siteName || CONFIG.siteName;
+            document.getElementById('setSiteUrl').value = settings.siteUrl || CONFIG.siteUrl;
+            document.getElementById('setGA4').value = settings.ga4TrackingId || CONFIG.ga4TrackingId;
+            document.getElementById('setAdminEmail').value = settings.adminEmail || CONFIG.adminEmail;
+        }
+
+        document.getElementById('settingsSave').addEventListener('click', function() {
+            settings = {
+                whatsappNumber: document.getElementById('setWhatsApp').value.trim(),
+                whatsappDisplayNumber: document.getElementById('setWhatsAppDisplay').value.trim(),
+                coursePrice: document.getElementById('setPrice').value.trim(),
+                courseOriginalPrice: document.getElementById('setOrigPrice').value.trim(),
+                freeTrialDays: parseInt(document.getElementById('setTrialDays').value) || 7,
+                ebook1Url: document.getElementById('setEbook1').value.trim(),
+                ebook2Url: document.getElementById('setEbook2').value.trim(),
+                siteName: document.getElementById('setSiteName').value.trim(),
+                siteUrl: document.getElementById('setSiteUrl').value.trim(),
+                ga4TrackingId: document.getElementById('setGA4').value.trim(),
+                adminEmail: document.getElementById('setAdminEmail').value.trim()
+            };
+            localStorage.setItem('am_settings', JSON.stringify(settings));
+            alert('Settings saved! Changes will apply on next page load.');
+        });
+
+        // Logout
+        document.getElementById('adminLogout').addEventListener('click', function() { Auth.signOut(); });
+    })();
+    </script>
+</body>
+</html>
