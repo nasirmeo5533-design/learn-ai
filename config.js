@@ -1,9 +1,10 @@
 const CONFIG = {
     whatsappNumber: "923703159642",
     whatsappDisplayNumber: "+92 370 3159642",
+    ebook1Title: "The Generative AI Specialist by Abeer Nasir",
     ebook1Url: "https://bit.ly/44sikZs",
-    ebook2Url: "https://bit.ly/4fmnlYC",
-    coursePrice: "PKR 4,999",
+    coursePrice: "PKR 2,000 / Month",
+    courseFullPrice: "PKR 6,000 Total (3 Months)",
     courseOriginalPrice: "PKR 15,000",
     freeTrialDays: 7,
     ga4TrackingId: "G-MEASUREMENT_ID",
@@ -13,6 +14,7 @@ const CONFIG = {
     supabaseUrl: "https://njnbcjuoomyydzefvkqq.supabase.co",
     supabaseAnonKey: "sb_publishable_Z1WOq7jn1EpG1Lu_ZPowwg_dsajE",
     adminEmail: "abeerinfo5566@gmail.com",
+    adminSecretPassword: "AbeerAdmin2026!",
     demoVideoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     buyerNotifications: [
         { name: "Sara K.", city: "Karachi", action: "enrolled", time: "6" },

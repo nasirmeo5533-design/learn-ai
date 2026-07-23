@@ -64,7 +64,7 @@ var Auth = (function () {
     async function signUp(email, password, fullName) {
         var client = getClient();
         if (!client) {
-            return simulateAuth(email, fullName);
+            return simulateAuth(email, fullName, password);
         }
         try {
             var result = await client.auth.signUp({
@@ -74,27 +74,27 @@ var Auth = (function () {
             });
             if (result.error) {
                 console.warn('Supabase auth signup notice:', result.error.message);
-                return simulateAuth(email, fullName);
+                return simulateAuth(email, fullName, password);
             }
             var user = { id: result.data.user ? result.data.user.id : 'u_' + Date.now(), email: email, name: fullName, role: email === CONFIG.adminEmail ? 'admin' : 'student' };
             setUser(user);
             return { user: user, error: null };
         } catch (err) {
             console.warn('Fallback to local auth signup:', err.message);
-            return simulateAuth(email, fullName);
+            return simulateAuth(email, fullName, password);
         }
     }
 
     async function signIn(email, password) {
         var client = getClient();
         if (!client) {
-            return simulateAuth(email);
+            return simulateAuth(email, email.split('@')[0], password);
         }
         try {
             var result = await client.auth.signInWithPassword({ email: email, password: password });
             if (result.error) {
                 console.warn('Supabase auth signin notice:', result.error.message);
-                return simulateAuth(email);
+                return simulateAuth(email, email.split('@')[0], password);
             }
             var name = (result.data.user && result.data.user.user_metadata && result.data.user.user_metadata.full_name) ? result.data.user.user_metadata.full_name : email.split('@')[0];
             var user = { id: result.data.user.id, email: email, name: name, role: email === CONFIG.adminEmail ? 'admin' : 'student' };
@@ -102,7 +102,7 @@ var Auth = (function () {
             return { user: user, error: null };
         } catch (err) {
             console.warn('Fallback to local auth signin:', err.message);
-            return simulateAuth(email);
+            return simulateAuth(email, email.split('@')[0], password);
         }
     }
 
@@ -138,7 +138,12 @@ var Auth = (function () {
         }
     }
 
-    function simulateAuth(email, fullName) {
+    function simulateAuth(email, fullName, password) {
+        if (email === CONFIG.adminEmail) {
+            if (!password || password !== CONFIG.adminSecretPassword) {
+                return { user: null, error: 'Invalid Admin Password! Access Denied to Admin Panel.' };
+            }
+        }
         var user = {
             id: 'sim_' + Date.now(),
             email: email,
