@@ -1,5 +1,5 @@
 /* ============================================
-   AI MASTERCLASS - MAIN SCRIPT V6
+   LEARN AI - MAIN SCRIPT V7
    ============================================ */
 (function () {
     'use strict';

@@ -14,7 +14,7 @@ const CONFIG = {
     supabaseUrl: "https://njnbcjuoomyydzefvkqq.supabase.co",
     supabaseAnonKey: "sb_publishable_Z1WOq7jn1EpG1Lu_ZPowwg_dsajE",
     adminEmail: "abeerinfo5566@gmail.com",
-    adminSecretPassword: "AbeerAdmin2026!",
+    adminSecretPassword: "02034000",
     demoVideoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     buyerNotifications: [
         { name: "Sara K.", city: "Karachi", action: "enrolled", time: "6" },
@@ -37,7 +37,7 @@ function getWhatsAppUrl(message) {
 }
 
 function getWhatsAppUrlForEbook() {
-    return getWhatsAppUrl("Hi! I want to download the 2 Free AI eBooks.");
+    return getWhatsAppUrl("Hi! I want to download the Free AI eBook.");
 }
 
 function getWhatsAppUrlForTrial() {
@@ -45,7 +45,7 @@ function getWhatsAppUrlForTrial() {
 }
 
 function getWhatsAppUrlForEnroll() {
-    return getWhatsAppUrl("Hi! I want to enroll in the PKR 4,999 AI Masterclass.");
+    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course (PKR 2,000/month installment plan).");
 }
 
 function getWhatsAppUrlForContact(name, message) {
@@ -53,9 +53,9 @@ function getWhatsAppUrlForContact(name, message) {
 }
 
 function getWhatsAppUrlWithTrack(trackName) {
-    return getWhatsAppUrl("Hi! I'm interested in the \"" + trackName + "\" track. I want to enroll & claim my " + CONFIG.freeTrialDays + "-Day Free Trial + 2 Free eBooks!");
+    return getWhatsAppUrl("Hi! I'm interested in the \"" + trackName + "\" track. I want to enroll & claim my " + CONFIG.freeTrialDays + "-Day Free Trial + Free eBook!");
 }
 
 function getWhatsAppUrlDefault() {
-    return getWhatsAppUrl("Hi! I want to enroll in the AI Masterclass & Claim my 7-Day Trial + 2 Free eBooks!");
+    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course & Claim my 7-Day Trial + Free eBook!");
 }
