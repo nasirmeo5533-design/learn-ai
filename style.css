@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;color:#0f172a;background:#ffffff;overflow-x:hidden}
+body{font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;line-height:1.6;color:#0f172a;background:#ffffff;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:color .2s ease}
 ul,ol{list-style:none}
 img{max-width:100%;height:auto;display:block}
@@ -85,6 +83,18 @@ h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.15;color:#0f172a;letter-spacing:
 .card-premium:hover::before{opacity:1}
 .card-flat{background:var(--bg-secondary);border:1px solid transparent;border-radius:var(--radius-lg);padding:28px;transition:all var(--transition-base)}
 .card-flat:hover{background:var(--white);border-color:var(--border);box-shadow:var(--shadow-md)}
+
+/* --- INSTRUCTOR --- */
+.instructor-card{display:flex;align-items:center;gap:32px;max-width:720px;margin:0 auto;padding:36px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+.instructor-avatar{flex-shrink:0;width:80px;height:80px;border-radius:50%;overflow:hidden;background:var(--blue-50);display:flex;align-items:center;justify-content:center}
+.instructor-info h3{font-size:1.15rem;font-weight:800;color:var(--text-primary);margin-bottom:4px}
+.instructor-role{font-size:.85rem;color:var(--blue-600);font-weight:600;margin-bottom:12px}
+.instructor-bio{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.instructor-stats{display:flex;gap:24px}
+.instructor-stat{text-align:center}
+.instructor-stat .num{display:block;font-size:1.1rem;font-weight:800;color:var(--text-primary)}
+.instructor-stat .label{font-size:.72rem;color:var(--text-muted)}
+@media(max-width:600px){.instructor-card{flex-direction:column;text-align:center}.instructor-stats{justify-content:center}}
 
 /* --- HONEST REALITY CHECK --- */
 .reality-title{font-size:1.2rem;margin-bottom:12px;color:var(--text-primary)}
@@ -269,7 +279,7 @@ body.announcement-hidden .page-header{padding-top:calc(var(--header-height) + 20
 .pricing-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px;color:var(--text-primary)}
 .pricing-card .price{font-size:2.2rem;font-weight:900;margin:12px 0 4px;color:var(--text-primary);letter-spacing:-.03em}
 .pricing-card .price span{font-size:.9rem;font-weight:500;color:var(--text-muted)}
-.pricing-card .original-price{font-size:.88rem;color:var(--text-muted);text-decoration:line-through;margin-bottom:8px}
+.pricing-card .original-price{font-size:.88rem;color:var(--text-muted);margin-bottom:8px}
 .pricing-card .note{font-size:.82rem;color:var(--text-secondary);margin-bottom:20px}
 .pricing-features{text-align:left;margin-bottom:24px}
 .pricing-features li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--slate-100);font-size:.85rem;color:var(--text-secondary)}

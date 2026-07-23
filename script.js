@@ -207,7 +207,6 @@
     function initDynamicPrices() {
         if (typeof CONFIG === 'undefined') return;
         setText('.dynamic-price', CONFIG.coursePrice);
-        setText('.dynamic-original-price', CONFIG.courseOriginalPrice);
         setText('.dynamic-trial-days', CONFIG.freeTrialDays);
 
         setAttr('.dynamic-whatsapp-link', 'href', getWhatsAppUrlDefault());
