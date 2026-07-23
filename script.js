@@ -35,6 +35,7 @@
         var msgs = bar.querySelectorAll('.announcement-msg');
         var closeBtn = bar.querySelector('.announcement-close');
         var current = 0;
+        var msgInterval = null;
 
         if (localStorage.getItem('announcementClosed') === '1') {
             document.body.classList.add('announcement-hidden');
@@ -43,7 +44,7 @@
 
         if (msgs.length > 0) {
             msgs[0].classList.add('active');
-            setInterval(function () {
+            msgInterval = setInterval(function () {
                 msgs[current].classList.remove('active');
                 current = (current + 1) % msgs.length;
                 msgs[current].classList.add('active');
@@ -52,6 +53,7 @@
 
         if (closeBtn) {
             closeBtn.addEventListener('click', function () {
+                if (msgInterval) { clearInterval(msgInterval); msgInterval = null; }
                 bar.style.transition = 'height .3s ease, opacity .3s ease';
                 bar.style.height = '0';
                 bar.style.opacity = '0';

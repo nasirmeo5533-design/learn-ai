@@ -15,21 +15,7 @@ const CONFIG = {
     supabaseAnonKey: "sb_publishable_Z1WOq7jn1EpG1Lu_ZPowwg_dsajE",
     adminEmail: "abeerinfo5566@gmail.com",
     adminSecretPassword: "02034000",
-    demoVideoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    buyerNotifications: [
-        { name: "Sara K.", city: "Karachi", action: "enrolled", time: "6" },
-        { name: "Usman R.", city: "Lahore", action: "claimed 7-Day Trial", time: "12" },
-        { name: "Fatima Z.", city: "Islamabad", action: "enrolled", time: "3" },
-        { name: "Ahmed M.", city: "Faisalabad", action: "claimed 7-Day Trial", time: "8" },
-        { name: "Ayesha N.", city: "Rawalpindi", action: "enrolled", time: "15" },
-        { name: "Hassan B.", city: "Multan", action: "claimed 7-Day Trial", time: "5" },
-        { name: "Zainab S.", city: "Peshawar", action: "enrolled", time: "10" },
-        { name: "Bilal T.", city: "Quetta", action: "claimed 7-Day Trial", time: "7" },
-        { name: "Mariam K.", city: "Sialkot", action: "enrolled", time: "4" },
-        { name: "Omar F.", city: "Gujranwala", action: "claimed 7-Day Trial", time: "9" },
-        { name: "Hira A.", city: "Hyderabad", action: "enrolled", time: "2" },
-        { name: "Danish I.", city: "Bahawalpur", action: "claimed 7-Day Trial", time: "11" }
-    ]
+    demoVideoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
 };
 
 function getWhatsAppUrl(message) {

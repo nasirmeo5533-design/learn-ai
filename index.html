@@ -13,6 +13,9 @@
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563EB">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="canonical" href="https://yourdomain.com/index.html">
     <script type="application/ld+json">
     {
@@ -39,9 +42,26 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Is coding required?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely not. Everything is taught using visual, no-code tools. If you can use a smartphone, you can learn AI with us."}},
+            {"@type": "Question", "name": "Is this beginner friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! We start from the absolute basics. No prior AI, tech, or coding experience is needed."}},
+            {"@type": "Question", "name": "Will I get a certificate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Upon completing all 20 modules and portfolio projects, you'll receive a verified certificate."}},
+            {"@type": "Question", "name": "How long is the course?", "acceptedAnswer": {"@type": "Answer", "text": "The structured learning path is 90 days (3 months). You get lifetime access."}},
+            {"@type": "Question", "name": "Is there community support?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! You get access to our student community and WhatsApp priority support."}},
+            {"@type": "Question", "name": "What projects will I build?", "acceptedAnswer": {"@type": "Answer", "text": "You'll build 9+ real projects including AI chatbots, automation workflows, content generation systems, and a portfolio website."}},
+            {"@type": "Question", "name": "Can I start freelancing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Month 3 specifically focuses on client hunting, freelancing platforms, proposal writing, and pricing strategies."}},
+            {"@type": "Question", "name": "What if I can't afford paid AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "We teach using 100% free alternatives for every tool. Leonardo.ai, N8n, OpenRouter — all free."}}
+        ]
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="announcement-bar">
         <div class="container">
             <div class="announcement-messages">
@@ -70,7 +90,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- HERO -->
         <section class="hero">
             <div class="container">
@@ -109,8 +129,8 @@
                                 </div>
                             </div>
                             <div class="hero-card-progress">
-                                <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:.78rem;font-weight:600;color:var(--text-primary)">Course Progress</span><span style="font-size:.78rem;font-weight:700;color:var(--blue-600)">20 Lessons</span></div>
-                                <div class="progress-bar"><div class="fill" style="width:30%"></div></div>
+                                <div class="hero-progress-header"><span>Your Journey</span><span>Stage 1 of 5</span></div>
+                                <div class="progress-bar"><div class="fill" style="width:20%"></div></div>
                             </div>
                             <div class="hero-card-modules">
                                 <div class="module-row"><span class="check done">&#10003;</span> Stage 1: AI Fundamentals</div>
@@ -130,13 +150,13 @@
             <div class="container">
                 <p class="label">Official Tools We Teach</p>
                 <div class="tools-grid">
-                    <div class="tool-item"><span class="tool-icon">&#127912;</span> Leonardo.ai</div>
-                    <div class="tool-item"><span class="tool-icon">&#9889;</span> N8n</div>
-                    <div class="tool-item"><span class="tool-icon">&#128172;</span> ChatGPT</div>
-                    <div class="tool-item"><span class="tool-icon">&#127908;</span> ElevenLabs</div>
-                    <div class="tool-item"><span class="tool-icon">&#129302;</span> Botpress</div>
-                    <div class="tool-item"><span class="tool-icon">&#9881;</span> Make.com</div>
-                    <div class="tool-item"><span class="tool-icon">&#127912;</span> Canva</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg> ChatGPT</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.7" y1="10.7" x2="15.3" y2="7.3"/><line x1="8.7" y1="13.3" x2="15.3" y2="16.7"/></svg> N8n</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Leonardo.ai</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> ElevenLabs</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16.01"/><line x1="16" y1="16" x2="16" y2="16.01"/></svg> Botpress</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Make.com</div>
+                    <div class="tool-item"><svg class="tool-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> Canva</div>
                 </div>
             </div>
         </section>
@@ -155,25 +175,25 @@
                         <h3>Learn</h3>
                         <p>Master AI fundamentals, prompt engineering, and the tools businesses actually use.</p>
                     </div>
-                    <div class="flow-arrow reveal">&#10132;</div>
+                    <div class="flow-arrow reveal"></div>
                     <div class="flow-step reveal rd2">
                         <div class="flow-num" style="background:linear-gradient(135deg,#10b981,#059669)">2</div>
                         <h3>Build</h3>
                         <p>Create 9+ portfolio projects — chatbots, automations, content systems, and more.</p>
                     </div>
-                    <div class="flow-arrow reveal">&#10132;</div>
+                    <div class="flow-arrow reveal"></div>
                     <div class="flow-step reveal rd3">
                         <div class="flow-num" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">3</div>
                         <h3>Deploy</h3>
                         <p>Launch real systems for businesses. Get hands-on experience that matters.</p>
                     </div>
-                    <div class="flow-arrow reveal">&#10132;</div>
+                    <div class="flow-arrow reveal"></div>
                     <div class="flow-step reveal rd4">
                         <div class="flow-num" style="background:linear-gradient(135deg,#f59e0b,#d97706)">4</div>
                         <h3>Get Clients</h3>
                         <p>Use our client hunting SOPs to find and close your first AI service deals.</p>
                     </div>
-                    <div class="flow-arrow reveal">&#10132;</div>
+                    <div class="flow-arrow reveal"></div>
                     <div class="flow-step reveal rd5">
                         <div class="flow-num" style="background:linear-gradient(135deg,#ec4899,#db2777)">5</div>
                         <h3>Grow</h3>
@@ -194,12 +214,24 @@
                 <div class="who-grid">
                     <div class="who-card reveal rd1"><div class="who-icon">&#127891;</div><h3>Students</h3><p>Start your career with in-demand AI skills. Build a portfolio before you even graduate.</p></div>
                     <div class="who-card reveal rd2"><div class="who-icon">&#128188;</div><h3>Freelancers</h3><p>Add AI services to your offerings. Charge premium rates for chatbots, automations &amp; content.</p></div>
-                    <div class="who-card reveal rd3"><div class="who-icon">&#127970;</div><h3>Agency Owners</h3><p>Scale your agency with AI-powered services. Automate delivery and increase margins.</p></div>
-                    <div class="who-card reveal rd1"><div class="who-icon">&#127909;</div><h3>Content Creators</h3><p>Use AI to 10x your content production. Create videos, blogs, and social posts faster.</p></div>
-                    <div class="who-card reveal rd2"><div class="who-icon">&#128176;</div><h3>Business Owners</h3><p>Automate repetitive tasks, cut costs, and grow your business with AI workflows.</p></div>
-                    <div class="who-card reveal rd3"><div class="who-icon">&#128640;</div><h3>Beginners</h3><p>No coding, no tech background needed. We start from zero and take you to pro.</p></div>
-                    <div class="who-card reveal rd1"><div class="who-icon">&#128200;</div><h3>Job Seekers</h3><p>Stand out with verified AI certification. Companies are desperate for AI skills.</p></div>
-                    <div class="who-card reveal rd2"><div class="who-icon">&#129309;</div><h3>Digital Marketers</h3><p>Automate campaigns, generate content at scale, and deliver measurable ROI with AI.</p></div>
+                    <div class="who-card reveal rd3"><div class="who-icon">&#128176;</div><h3>Business Owners</h3><p>Automate repetitive tasks, cut costs, and grow your business with AI workflows.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HONEST REALITY -->
+        <section class="section-sm" style="background:var(--white)">
+            <div class="container">
+                <div class="card-premium reveal" style="border-left:4px solid var(--blue-500)">
+                    <div class="section-eyebrow">&#9888; Honest Reality Check</div>
+                    <h3 class="reality-title">Let's Be Real About Learning AI</h3>
+                    <p class="reality-desc">We don't promise overnight riches or claim you'll become a millionaire in 30 days. AI is a powerful skill, but real results take real effort. Here's what we actually teach and what you can realistically expect:</p>
+                    <ul class="reality-list">
+                        <li class="reality-item"><span class="reality-check">&#9989;</span> Learn AI tools that businesses actually use</li>
+                        <li class="reality-item"><span class="reality-check">&#9989;</span> Build a portfolio of real projects</li>
+                        <li class="reality-item"><span class="reality-check">&#9989;</span> Find clients and start earning</li>
+                        <li class="reality-item"><span class="reality-check">&#9989;</span> Get a verified certificate</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -247,30 +279,13 @@
             </div>
         </section>
 
-        <!-- HONEST REALITY -->
-        <section class="section-sm" style="background:var(--white)">
-            <div class="container">
-                <div class="card-premium reveal" style="border-left:4px solid var(--blue-500)">
-                    <div class="section-eyebrow">&#9888; Honest Reality Check</div>
-                    <h3 style="font-size:1.2rem;margin-bottom:12px;color:var(--text-primary)">Let's Be Real About Learning AI</h3>
-                    <p style="color:var(--text-secondary);max-width:640px;margin-bottom:16px;line-height:1.7">We don't promise overnight riches or claim you'll become a millionaire in 30 days. AI is a powerful skill, but real results take real effort. Here's what we actually teach and what you can realistically expect:</p>
-                    <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
-                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-secondary);padding:12px 16px;background:var(--bg-secondary);border-radius:var(--radius-sm);border:1px solid var(--border)"><span style="flex-shrink:0;font-size:1rem">&#9989;</span> Learn AI tools that businesses actually use</li>
-                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-secondary);padding:12px 16px;background:var(--bg-secondary);border-radius:var(--radius-sm);border:1px solid var(--border)"><span style="flex-shrink:0;font-size:1rem">&#9989;</span> Build a portfolio of real projects</li>
-                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-secondary);padding:12px 16px;background:var(--bg-secondary);border-radius:var(--radius-sm);border:1px solid var(--border)"><span style="flex-shrink:0;font-size:1rem">&#9989;</span> Find clients and start earning</li>
-                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-secondary);padding:12px 16px;background:var(--bg-secondary);border-radius:var(--radius-sm);border:1px solid var(--border)"><span style="flex-shrink:0;font-size:1rem">&#9989;</span> Get a verified certificate</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <!-- WHAT YOU'LL BUILD -->
         <section class="section" style="background:var(--bg-secondary)">
             <div class="container">
                 <div class="text-center">
-                    <div class="section-eyebrow reveal">&#128736; Hands-On Projects</div>
+                    <div class="section-eyebrow reveal">&#128736; Your Portfolio</div>
                     <h2 class="section-title reveal">What You'll <span class="gradient">Build</span></h2>
-                    <p class="section-subtitle reveal">Not just theory. You'll build 9+ real projects that you can show to clients and employers.</p>
+                    <p class="section-subtitle reveal">9+ portfolio-ready projects you can show to clients and employers. Every project is real, practical, and deployable.</p>
                 </div>
                 <div class="build-grid">
                     <div class="build-card reveal rd1"><div class="build-icon" style="background:var(--blue-50);color:var(--blue-600)">&#129302;</div><h3>AI Chatbot</h3><p>Build a customer service chatbot using Botpress</p><span class="build-tag">Beginner Friendly</span></div>
@@ -361,6 +376,7 @@
                             <li><span class="ck">&#10003;</span> Portfolio Building</li>
                         </ul>
                         <div class="track-income"><div class="label">Average Monthly Earning</div><div class="amount">PKR 50,000 - 150,000</div></div>
+                        <p class="track-disclaimer">Results vary based on individual effort, skills, and market conditions.</p>
                     </div>
                     <div class="track-card reveal rd2">
                         <div class="track-badge" style="background:var(--green-50);color:var(--green-600)">&#9889; Automation Expert</div>
@@ -373,6 +389,7 @@
                             <li><span class="ck">&#10003;</span> E-commerce Workflows</li>
                         </ul>
                         <div class="track-income"><div class="label">Average Monthly Earning</div><div class="amount">PKR 80,000 - 200,000</div></div>
+                        <p class="track-disclaimer">Results vary based on individual effort, skills, and market conditions.</p>
                     </div>
                     <div class="track-card reveal rd3">
                         <div class="track-badge" style="background:#f5f3ff;color:#7c3aed">&#127970; Agency Builder</div>
@@ -385,6 +402,7 @@
                             <li><span class="ck">&#10003;</span> Retainer Agreements</li>
                         </ul>
                         <div class="track-income"><div class="label">Average Monthly Earning</div><div class="amount">PKR 150,000 - 500,000+</div></div>
+                        <p class="track-disclaimer">Results vary based on individual effort, skills, and market conditions.</p>
                     </div>
                     <div class="track-card reveal rd4">
                         <div class="track-badge" style="background:var(--amber-50);color:#b45309">&#127909; Content Creator</div>
@@ -397,68 +415,8 @@
                             <li><span class="ck">&#10003;</span> Monetization Strategies</li>
                         </ul>
                         <div class="track-income"><div class="label">Average Monthly Earning</div><div class="amount">PKR 40,000 - 300,000</div></div>
+                        <p class="track-disclaimer">Results vary based on individual effort, skills, and market conditions.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FREE LESSON PREVIEW -->
-        <section class="section">
-            <div class="container">
-                <div class="text-center">
-                    <div class="section-eyebrow reveal">&#127909; Free Preview</div>
-                    <h2 class="section-title reveal">Try Before You <span class="gradient">Enroll</span></h2>
-                    <p class="section-subtitle reveal">Watch free lesson previews and see the quality of our teaching before you commit.</p>
-                </div>
-                <div class="preview-grid">
-                    <div class="preview-card reveal rd1">
-                        <div class="preview-thumb"><div class="play-btn">&#9654;</div></div>
-                        <div class="preview-body">
-                            <span class="preview-tag">Free Lesson</span>
-                            <h3>ChatGPT Prompt Engineering</h3>
-                            <p>Learn the fundamentals of prompt engineering and start getting better results from AI.</p>
-                            <div class="preview-meta"><span>&#9201; 25 mins</span><span>&#127909; Video Lesson</span></div>
-                        </div>
-                    </div>
-                    <div class="preview-card reveal rd2">
-                        <div class="preview-thumb" style="background:linear-gradient(135deg,#ecfdf5,var(--green-100))"><div class="play-btn">&#9654;</div></div>
-                        <div class="preview-body">
-                            <span class="preview-tag">Free Lesson</span>
-                            <h3>AI Image Generation</h3>
-                            <p>Create stunning visuals with Leonardo.ai. 150 free tokens per day - no paid tools needed.</p>
-                            <div class="preview-meta"><span>&#9201; 30 mins</span><span>&#127909; Video Lesson</span></div>
-                        </div>
-                    </div>
-                    <div class="preview-card reveal rd3">
-                        <div class="preview-thumb" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe)"><div class="play-btn">&#9654;</div></div>
-                        <div class="preview-body">
-                            <span class="preview-tag">Free Template</span>
-                            <h3>50+ Business Prompt Templates</h3>
-                            <p>Download our curated collection of prompts for marketing, sales, and content creation.</p>
-                            <div class="preview-meta"><span>&#128196; PDF Guide</span><span>&#128229; Downloadable</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO PROJECTS -->
-        <section class="section" style="background:var(--bg-secondary)">
-            <div class="container">
-                <div class="text-center">
-                    <div class="section-eyebrow reveal">&#128736; Your Portfolio</div>
-                    <h2 class="section-title reveal">Projects You'll <span class="gradient">Showcase</span></h2>
-                    <p class="section-subtitle reveal">Every project is designed to be portfolio-ready. Show clients and employers what you can actually build.</p>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item reveal rd1"><div class="portfolio-icon">&#129302;</div><h4>AI Chatbot</h4><p>Customer service bot</p></div>
-                    <div class="portfolio-item reveal rd2"><div class="portfolio-icon">&#127760;</div><h4>AI Website</h4><p>Professional portfolio</p></div>
-                    <div class="portfolio-item reveal rd3"><div class="portfolio-icon">&#128200;</div><h4>Lead Generation</h4><p>Automated pipeline</p></div>
-                    <div class="portfolio-item reveal rd4"><div class="portfolio-icon">&#9889;</div><h4>AI Automation</h4><p>Business workflows</p></div>
-                    <div class="portfolio-item reveal rd1"><div class="portfolio-icon">&#129489;</div><h4>AI Agent</h4><p>Task automation</p></div>
-                    <div class="portfolio-item reveal rd2"><div class="portfolio-icon">&#128640;</div><h4>Marketing System</h4><p>Campaign automation</p></div>
-                    <div class="portfolio-item reveal rd3"><div class="portfolio-icon">&#128247;</div><h4>Social Media</h4><p>Content automation</p></div>
-                    <div class="portfolio-item reveal rd4"><div class="portfolio-icon">&#128188;</div><h4>Business Auto</h4><p>End-to-end workflow</p></div>
                 </div>
             </div>
         </section>
@@ -619,12 +577,36 @@
                     <p class="section-subtitle reveal">Real reviews from real students across Pakistan.</p>
                 </div>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card reveal rd1"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"I went from zero AI knowledge to building chatbots for clients in just 2 months. The step-by-step approach made everything so easy to follow."</p><div class="testimonial-author"><div class="testimonial-avatar av1">TM</div><div><div class="name">Tariq Mahmood</div><div class="role">Business Owner, Karachi</div></div></div></div>
-                    <div class="testimonial-card reveal rd2"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"The automation modules alone were worth the entire course. I now save 20+ hours per week on repetitive tasks using N8n."</p><div class="testimonial-author"><div class="testimonial-avatar av2">SN</div><div><div class="name">Dr. Shabana Naz</div><div class="role">Marketing Director, Lahore</div></div></div></div>
-                    <div class="testimonial-card reveal rd3"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"Finally, an AI course that doesn't promise magic. The 90-day roadmap is realistic, and the portfolio projects helped me land my first client."</p><div class="testimonial-author"><div class="testimonial-avatar av3">RL</div><div><div class="name">Rashid Latif</div><div class="role">Freelancer, Islamabad</div></div></div></div>
-                    <div class="testimonial-card reveal rd1"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"I was skeptical about learning AI without coding, but this course proved me wrong. Everything is visual, no-code, and practical."</p><div class="testimonial-author"><div class="testimonial-avatar av4">FA</div><div><div class="name">Faisal Ahmed</div><div class="role">Student, Rawalpindi</div></div></div></div>
-                    <div class="testimonial-card reveal rd2"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"The WhatsApp support is incredible. Whenever I'm stuck, I get help within minutes. That personal touch makes all the difference."</p><div class="testimonial-author"><div class="testimonial-avatar av1">AK</div><div><div class="name">Aisha Khan</div><div class="role">Entrepreneur, Peshawar</div></div></div></div>
-                    <div class="testimonial-card reveal rd3"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="quote">"I've taken 5+ AI courses before this one. This is the only one that actually taught me how to earn, not just learn. Real projects, real results."</p><div class="testimonial-author"><div class="testimonial-avatar av2">MH</div><div><div class="name">Muhammad Hasan</div><div class="role">Agency Owner, Faisalabad</div></div></div></div>
+                    <div class="testimonial-card reveal rd1">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rating-num">4.9</span></div>
+                        <p class="quote">"I went from zero AI knowledge to building chatbots for clients in just 2 months. The step-by-step approach made everything so easy to follow."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av1">TM</div><div><div class="name">Tariq Mahmood</div><div class="role">Business Owner, Karachi</div></div></div>
+                    </div>
+                    <div class="testimonial-card reveal rd2">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rating-num">4.8</span></div>
+                        <p class="quote">"The automation modules alone were worth the entire course. I now save 20+ hours per week on repetitive tasks using N8n."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av2">SN</div><div><div class="name">Dr. Shabana Naz</div><div class="role">Marketing Director, Lahore</div></div></div>
+                    </div>
+                    <div class="testimonial-card reveal rd3">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rating-num">4.9</span></div>
+                        <p class="quote">"Finally, an AI course that doesn't promise magic. The 90-day roadmap is realistic, and the portfolio projects helped me land my first client."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av3">RL</div><div><div class="name">Rashid Latif</div><div class="role">Freelancer, Islamabad</div></div></div>
+                    </div>
+                    <div class="testimonial-card reveal rd1">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><span class="rating-num">4.7</span></div>
+                        <p class="quote">"I was skeptical about learning AI without coding, but this course proved me wrong. Everything is visual, no-code, and practical."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av4">FA</div><div><div class="name">Faisal Ahmed</div><div class="role">Student, Rawalpindi</div></div></div>
+                    </div>
+                    <div class="testimonial-card reveal rd2">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rating-num">4.8</span></div>
+                        <p class="quote">"The WhatsApp support is incredible. Whenever I'm stuck, I get help within minutes. That personal touch makes all the difference."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av1">AK</div><div><div class="name">Aisha Khan</div><div class="role">Entrepreneur, Peshawar</div></div></div>
+                    </div>
+                    <div class="testimonial-card reveal rd3">
+                        <div class="testimonial-rating"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rating-num">4.9</span></div>
+                        <p class="quote">"I've taken 5+ AI courses before this one. This is the only one that actually taught me how to earn, not just learn. Real projects, real results."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar av2">MH</div><div><div class="name">Muhammad Hasan</div><div class="role">Agency Owner, Faisalabad</div></div></div>
+                    </div>
                 </div>
             </div>
         </section>
