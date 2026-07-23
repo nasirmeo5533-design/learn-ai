@@ -623,7 +623,7 @@ body.modal-open{overflow:hidden}
     .dashboard-sidebar-menu{display:none}
 }
 @media(max-width:768px){
-    .nav-links{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:var(--white);border-left:1px solid var(--border);flex-direction:column;padding:80px 28px 28px;gap:20px;transition:right var(--transition-slow);z-index:999;box-shadow:var(--shadow-2xl)}
+    .nav-links{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:var(--white);border-left:1px solid var(--border);flex-direction:column;padding:80px 28px 28px;gap:20px;transition:right var(--transition-slow);z-index:1001;box-shadow:var(--shadow-2xl)}
     .nav-links.open{right:0}
     .nav-toggle{display:flex}
     .hero h1{font-size:2rem}

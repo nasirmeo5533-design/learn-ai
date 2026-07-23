@@ -98,58 +98,52 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
-    <script src="auth.js"></script>
     <script>
     (function() {
         'use strict';
-        if (!Auth.requireAuth()) return;
 
-        var user = Auth.getUser();
-        var progress = JSON.parse(localStorage.getItem('am_progress') || '{}');
+        var progress = JSON.parse(localStorage.getItem('learnai_progress') || '{}');
 
         var modules = [
-            {stage:1,snum:"S1",name:"Stage 1: AI & Prompt Engineering",lessons:[
-                {id:"m1",title:"Module 1: Master ChatGPT & Claude Advanced Prompt Engineering",desc:"Chain-of-thought, role prompting, few-shot learning, and 50+ business templates",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m2",title:"Module 2: OpenRouter & Free LLM Models Setup",desc:"Zero paid subscription needed - access GPT-4o, Claude, Llama for free",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m3",title:"Module 3: AI Tool Stack Setup & Workspace Organization",desc:"Configure your complete AI workspace with free tools",dur:"25 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m4",title:"Module 4: Prompt Templates & Cheat Sheets Collection",desc:"Downloadable prompt library for every business use case",dur:"20 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            {stage:1,snum:"S1",name:"Stage 1: AI Fundamentals & Prompt Engineering",color:"#2563EB",lessons:[
+                {id:"m1",title:"ChatGPT & Claude Advanced Prompt Engineering",desc:"Chain-of-thought, role prompting, few-shot learning, and 50+ business templates",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m2",title:"OpenRouter & Free LLM Models Setup",desc:"Zero paid subscription needed - access GPT-4o, Claude, Llama for free",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m3",title:"AI Tool Stack Setup & Workspace Organization",desc:"Configure your complete AI workspace with free tools",dur:"25 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m4",title:"Prompt Templates & Cheat Sheets Collection",desc:"Downloadable prompt library for every business use case",dur:"20 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
             ]},
-            {stage:2,snum:"S2",name:"Stage 2: AI Content & Visual Creation",lessons:[
-                {id:"m5",title:"Module 5: AI Image Generation Masterclass (Leonardo.ai)",desc:"150 free tokens/day - create professional visuals without design skills",dur:"50 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m6",title:"Module 6: AI Voice Over & Audio Synthesis",desc:"ElevenLabs & free alternatives for professional voiceovers",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m7",title:"Module 7: Creating Viral Short-Form Videos with AI",desc:"CapCut, Runway alternatives, and AI video editing workflows",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m8",title:"Module 8: Copywriting & Content Strategy for Social Media",desc:"AI-powered content calendars, captions, and engagement strategies",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            {stage:2,snum:"S2",name:"Stage 2: AI Content Creation & Design",color:"#10b981",lessons:[
+                {id:"m5",title:"AI Image Generation Masterclass (Leonardo.ai)",desc:"150 free tokens/day - create professional visuals without design skills",dur:"50 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m6",title:"AI Voice Over & Audio Synthesis",desc:"ElevenLabs & free alternatives for professional voiceovers",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m7",title:"Creating Viral Short-Form Videos with AI",desc:"CapCut, Runway alternatives, and AI video editing workflows",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m8",title:"Copywriting & Content Strategy for Social Media",desc:"AI-powered content calendars, captions, and engagement strategies",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
             ]},
-            {stage:3,snum:"S3",name:"Stage 3: No-Code AI Business Automation",lessons:[
-                {id:"m9",title:"Module 9: Introduction to No-Code Workflow Automation",desc:"N8n (free, self-hosted) & Zapier free tier fundamentals",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m10",title:"Module 10: Automating E-commerce Orders & Customer Leads",desc:"Order processing, email sequences, and lead capture automation",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m11",title:"Module 11: Building AI Lead Capture Forms & CRM Connections",desc:"Automated lead scoring, CRM integration, and follow-up sequences",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m12",title:"Module 12: Social Media Auto-Posting Workflows",desc:"Multi-platform scheduling, AI content repurposing, and analytics",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            {stage:3,snum:"S3",name:"Stage 3: No-Code AI Automation",color:"#7c3aed",lessons:[
+                {id:"m9",title:"Introduction to No-Code Workflow Automation (N8n)",desc:"N8n (free, self-hosted) & Zapier free tier fundamentals",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m10",title:"Automating E-commerce Orders & Customer Leads",desc:"Order processing, email sequences, and lead capture automation",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m11",title:"Building AI Lead Capture Forms & CRM Connections",desc:"Automated lead scoring, CRM integration, and follow-up sequences",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m12",title:"Social Media Auto-Posting Workflows",desc:"Multi-platform scheduling, AI content repurposing, and analytics",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
             ]},
-            {stage:4,snum:"S4",name:"Stage 4: AI Chatbots & Agents Deployment",lessons:[
-                {id:"m13",title:"Module 13: Building Customer Service AI Chatbots Without Code",desc:"Botpress, Chatbase, and free chatbot builders",dur:"50 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m14",title:"Module 14: Connecting Chatbots to WhatsApp Business & Websites",desc:"WhatsApp API setup, website widget embedding, and testing",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m15",title:"Module 15: Introduction to Autonomous AI Task Agents",desc:"AI agents that perform tasks autonomously - no coding required",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m16",title:"Module 16: Multi-Agent Collaboration Fundamentals",desc:"Coordinating multiple AI agents for complex business workflows",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            {stage:4,snum:"S4",name:"Stage 4: AI Chatbots & Agents",color:"#f59e0b",lessons:[
+                {id:"m13",title:"Building Customer Service AI Chatbots (Botpress)",desc:"Botpress, Chatbase, and free chatbot builders - no code needed",dur:"50 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m14",title:"Connecting Chatbots to WhatsApp & Websites",desc:"WhatsApp API setup, website widget embedding, and testing",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m15",title:"Introduction to Autonomous AI Task Agents",desc:"AI agents that perform tasks autonomously - no coding required",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m16",title:"Multi-Agent Collaboration Fundamentals",desc:"Coordinating multiple AI agents for complex business workflows",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
             ]},
-            {stage:5,snum:"S5",name:"Stage 5: High-Value Client Hunting & Monetization",lessons:[
-                {id:"m17",title:"Module 17: Packaging AI Services ($500-$2,000/project)",desc:"Service packages, pricing tiers, and value-based pricing",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m18",title:"Module 18: Client Outreach Blueprint",desc:"Cold email, LinkedIn outreach, and local business pitching",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m19",title:"Module 19: Proposal Writing, Pricing Strategy & Closing Sales",desc:"Professional proposals, objection handling, and closing techniques",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-                {id:"m20",title:"Module 20: Delivering Client Projects & Retainer Agreements",desc:"Project delivery, client management, and recurring revenue models",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            {stage:5,snum:"S5",name:"Stage 5: Client Hunting & Earning",color:"#ec4899",lessons:[
+                {id:"m17",title:"Packaging AI Services ($500-$2,000/project)",desc:"Service packages, pricing tiers, and value-based pricing",dur:"40 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m18",title:"Client Outreach Blueprint",desc:"Cold email, LinkedIn outreach, and local business pitching",dur:"45 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m19",title:"Proposal Writing, Pricing & Closing Sales",desc:"Professional proposals, objection handling, and closing techniques",dur:"35 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+                {id:"m20",title:"Delivering Client Projects & Retainer Agreements",desc:"Project delivery, client management, and recurring revenue models",dur:"30 mins",url:"https://www.youtube.com/embed/dQw4w9WgXcQ"}
             ]}
         ];
 
-        // Set user info
-        var displayName = user.name || user.email.split('@')[0];
-        document.getElementById('dashUserName').textContent = displayName;
-        document.getElementById('dashWelcomeName').textContent = displayName;
-        document.getElementById('dashUserAvatar').textContent = displayName.charAt(0).toUpperCase();
+        // Set user info (from localStorage or default)
+        var userName = localStorage.getItem('learnai_name') || 'Student';
+        document.getElementById('dashUserName').textContent = userName;
+        document.getElementById('dashWelcomeName').textContent = userName;
+        document.getElementById('dashUserAvatar').textContent = userName.charAt(0).toUpperCase();
         document.getElementById('dashEbook1').href = CONFIG.ebook1Url;
-        document.getElementById('dashEbook2').href = CONFIG.ebook1Url;
-        document.getElementById('dashWhatsApp').href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent('Hi! I need help with my course.');
 
         // Build module list
         var listEl = document.getElementById('dashModuleList');
@@ -177,25 +171,61 @@
                 var lessonEl = document.createElement('div');
                 lessonEl.className = 'module-lesson';
                 lessonEl.innerHTML = '<span class="lesson-check' + (isDone ? ' done' : '') + '">' + (isDone ? '&#10003;' : '') + '</span><span class="lesson-title">' + lesson.title + '</span><span class="lesson-dur">' + lesson.dur + '</span>';
+                
+                // Click to play video
                 lessonEl.addEventListener('click', function() {
                     playVideo(lesson);
                     document.querySelectorAll('.module-lesson').forEach(function(el) { el.classList.remove('playing'); });
                     lessonEl.classList.add('playing');
                 });
+                
+                // Right-click or long-press to toggle completion
+                var checkEl = lessonEl.querySelector('.lesson-check');
+                checkEl.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    progress[lesson.id] = !progress[lesson.id];
+                    localStorage.setItem('learnai_progress', JSON.stringify(progress));
+                    
+                    if (progress[lesson.id]) {
+                        checkEl.classList.add('done');
+                        checkEl.innerHTML = '&#10003;';
+                        completedLessons++;
+                    } else {
+                        checkEl.classList.remove('done');
+                        checkEl.innerHTML = '';
+                        completedLessons--;
+                    }
+                    
+                    updateStats();
+                    updateStageProgress(stageEl, stage);
+                });
+                
                 body.appendChild(lessonEl);
             });
             stageEl.appendChild(body);
             listEl.appendChild(stageEl);
         });
 
-        // Update stats
-        var pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
-        document.getElementById('dashModulesComplete').textContent = completedLessons;
-        document.getElementById('dashProgress').textContent = pct + '%';
-        document.getElementById('dashProgressText').textContent = completedLessons + '/' + totalLessons + ' Complete';
-        document.getElementById('dashProgressPct').textContent = pct + '%';
-        document.getElementById('dashProgressRing').style.strokeDashoffset = 213.63 - (213.63 * pct / 100);
-        document.getElementById('dashProgressMsg').textContent = pct === 0 ? 'Start your first module to begin tracking progress!' : pct < 50 ? 'Great start! Keep going to unlock more skills.' : pct < 100 ? 'Almost there! You\'re doing amazing.' : 'Congratulations! You completed the entire course!';
+        function updateStats() {
+            var pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+            document.getElementById('dashModulesComplete').textContent = completedLessons;
+            document.getElementById('dashProgress').textContent = pct + '%';
+            document.getElementById('dashProgressText').textContent = completedLessons + '/' + totalLessons + ' Complete';
+            document.getElementById('dashProgressPct').textContent = pct + '%';
+            document.getElementById('dashProgressRing').style.strokeDashoffset = 213.63 - (213.63 * pct / 100);
+            
+            var msg = pct === 0 ? 'Click the circle next to a lesson to mark it complete!' 
+                     : pct < 25 ? 'Great start! Keep going to unlock more skills.'
+                     : pct < 50 ? 'You\'re building momentum! Keep learning.'
+                     : pct < 100 ? 'Almost halfway! You\'re doing amazing.'
+                     : 'Congratulations! You completed the entire course!';
+            document.getElementById('dashProgressMsg').textContent = msg;
+        }
+
+        function updateStageProgress(stageEl, stage) {
+            var done = stage.lessons.filter(function(l) { return progress[l.id]; }).length;
+            stageEl.querySelector('.stage-progress').textContent = done + '/' + stage.lessons.length;
+        }
 
         // Open first incomplete stage
         var opened = false;
@@ -216,7 +246,10 @@
         }
 
         // Logout
-        document.getElementById('dashLogout').addEventListener('click', function() { Auth.signOut(); });
+        document.getElementById('dashLogout').addEventListener('click', function() { 
+            localStorage.removeItem('learnai_name');
+            window.location.href = 'index.html';
+        });
     })();
     </script>
 </body>

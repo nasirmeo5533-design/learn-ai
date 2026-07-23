@@ -105,22 +105,24 @@
                             <label for="email">Email Address *</label>
                             <input type="email" name="email" id="email" placeholder="e.g. ahmed@example.com" required>
 
-                            <label for="subject">Subject</label>
-                            <select name="subject" id="subject">
-                                <option value="">Select a topic...</option>
-                                <option value="Course Inquiry">Course Inquiry</option>
-                                <option value="Free Trial">Free Trial Question</option>
-                                <option value="eBook Download">eBook Download Help</option>
-                                <option value="Payment Issue">Payment Issue</option>
-                                <option value="Technical Support">Technical Support</option>
-                                <option value="Other">Other</option>
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" name="phone" id="phone" placeholder="e.g. 0300 1234567" required>
+
+                            <label for="course">Interested In *</label>
+                            <select name="course" id="course" required>
+                                <option value="">Select a course...</option>
+                                <option value="Starter - PKR 2,499">Starter (PKR 2,499)</option>
+                                <option value="Pro - PKR 2,000/mo x 3">Pro Installment (PKR 2,000/mo × 3)</option>
+                                <option value="Elite - PKR 9,999">Elite (PKR 9,999)</option>
+                                <option value="7-Day Free Trial">7-Day Free Trial</option>
+                                <option value="Free eBook">Free eBook</option>
                             </select>
 
-                            <label for="message">Your Message *</label>
-                            <textarea name="message" id="message" placeholder="Type your message here..." required></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea name="message" id="message" placeholder="Tell us about your goals or questions..."></textarea>
 
-                            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">&#128172; Send via WhatsApp</button>
-                            <p style="text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:10px">Your message will be sent directly via WhatsApp for instant response.</p>
+                            <button type="submit" id="contactSubmitBtn" class="btn btn-primary btn-lg" style="width:100%">Send Message</button>
+                            <p id="contactStatus" style="text-align:center;font-size:.85rem;margin-top:10px;display:none"></p>
                         </form>
                     </div>
                 </div>
@@ -144,6 +146,7 @@
 
     <a href="https://wa.me/923703159642" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">&#128172;</a>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
     <script>
@@ -151,6 +154,84 @@
             if (typeof CONFIG !== 'undefined') {
                 document.getElementById('displayNumber').textContent = CONFIG.whatsappDisplayNumber;
             }
+
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var btn = document.getElementById('contactSubmitBtn');
+                var status = document.getElementById('contactStatus');
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var phone = document.getElementById('phone').value.trim();
+                var course = document.getElementById('course').value;
+                var message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !phone || !course) {
+                    status.textContent = 'Please fill all required fields.';
+                    status.style.color = '#dc2626';
+                    status.style.display = 'block';
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+                status.style.display = 'none';
+
+                // Try Supabase first
+                if (typeof supabase !== 'undefined' && CONFIG.supabaseUrl && CONFIG.supabaseAnonKey) {
+                    window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey)
+                        .from('contact_submissions')
+                        .insert({
+                            name: name,
+                            email: email,
+                            phone: phone,
+                            course: course,
+                            message: message || '',
+                            created_at: new Date().toISOString()
+                        })
+                        .then(function(result) {
+                            if (result.error) throw result.error;
+                            showSuccess(name, message);
+                        })
+                        .catch(function(err) {
+                            console.error('Supabase error:', err);
+                            // Fallback to WhatsApp only
+                            fallbackWhatsApp(name, message);
+                        });
+                } else {
+                    // Supabase not loaded — WhatsApp only
+                    fallbackWhatsApp(name, message);
+                }
+
+                function showSuccess(name, message) {
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                    document.getElementById('contactForm').reset();
+                    status.textContent = 'Message sent successfully! We\'ll get back to you within 2 hours.';
+                    status.style.color = '#10b981';
+                    status.style.display = 'block';
+                    
+                    // Also send to WhatsApp as backup
+                    var waMsg = 'Hello! I\'m ' + name + '.';
+                    if (message) waMsg += ' ' + message;
+                    waMsg += ' (Course: ' + course + ')';
+                    window.open('https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(waMsg), '_blank');
+                }
+
+                function fallbackWhatsApp(name, message) {
+                    var waMsg = 'Hello! I\'m ' + name + '.';
+                    if (message) waMsg += ' ' + message;
+                    waMsg += ' (Course: ' + course + ')';
+                    window.open('https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(waMsg), '_blank');
+                    
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                    document.getElementById('contactForm').reset();
+                    status.textContent = 'Opening WhatsApp... Please send your message there for instant response.';
+                    status.style.color = '#2563EB';
+                    status.style.display = 'block';
+                }
+            });
         });
     </script>
 </body>
