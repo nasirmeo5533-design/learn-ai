@@ -436,8 +436,8 @@ body.announcement-hidden .page-header{padding-top:calc(var(--header-height) + 20
 .countdown-wrap{background:linear-gradient(135deg,var(--red-50),#fff1f2);border:1px solid var(--red-100);border-radius:var(--radius-lg);padding:16px 24px;margin-bottom:20px;text-align:center}
 .countdown-label{font-size:.82rem;font-weight:600;color:var(--red-500);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
 .countdown-timer{display:flex;justify-content:center;gap:12px}
-.countdown-unit{background:var(--white);border:1px solid var(--red-100);border-radius:var(--radius-md);padding:8px 14px;min-width:60px;text-align:center}
-.countdown-unit .num{display:block;font-size:1.5rem;font-weight:800;color:var(--red-500);line-height:1.2;font-family:'Poppins',sans-serif}
+.countdown-unit{background:linear-gradient(135deg,#fef2f2,#fff);border:2px solid var(--red-200);border-radius:var(--radius-md);padding:10px 16px;min-width:68px;text-align:center;box-shadow:0 2px 8px rgba(239,68,68,.1)}
+.countdown-unit .num{display:block;font-size:1.7rem;font-weight:800;color:var(--red-500);line-height:1.2;font-family:'Poppins',sans-serif;letter-spacing:-.02em}
 .countdown-unit .lbl{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 .countdown-expired{font-size:.9rem;color:var(--red-500);font-weight:700}
 
@@ -1029,8 +1029,8 @@ body.modal-open{overflow:hidden}
     .section-title{font-size:clamp(1.6rem,5vw,2.2rem)}
     .section-subtitle{font-size:1rem}
     .pricing-card .price{font-size:1.8rem}
-    .countdown-unit{min-width:50px;padding:6px 10px}
-    .countdown-unit .num{font-size:1.2rem}
+    .countdown-unit{min-width:50px;padding:8px 12px}
+    .countdown-unit .num{font-size:1.3rem}
     .roadmap-cards{gap:16px}
     .roadmap-card{padding:20px}
     .roadmap-card-title{font-size:1rem}
