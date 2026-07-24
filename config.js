@@ -8,8 +8,8 @@ const CONFIG = {
     freeTrialDays: 0,
     ga4TrackingId: "G-MEASUREMENT_ID",
     siteUrl: "https://learn-ai-sable-phi.vercel.app",
-    siteName: "AI Career Platform",
-    siteDescription: "Learn AI step-by-step in 30 days - no coding required. Master no-code AI tools for business automation, content creation & chatbot building.",
+    siteName: "AI Automation Platform",
+    siteDescription: "AI Automation step-by-step in 30 days - no coding required. Master no-code AI tools for business automation, content creation & chatbot building.",
     supabaseUrl: "https://njnbcjuoomyydzefvkqq.supabase.co",
     supabaseAnonKey: "sb_publishable_Z1WOq7jn1EpG1Lu_ZPowwg_dsajE",
     adminEmail: "abeerinfo5566@gmail.com",
@@ -26,11 +26,11 @@ function getWhatsAppUrlForEbook() {
 }
 
 function getWhatsAppUrlForTrial() {
-    return getWhatsAppUrl("Hi! I want to start the Learn AI course (PKR 3,000).");
+    return getWhatsAppUrl("Hi! I want to start the AI Automation course (PKR 3,000).");
 }
 
 function getWhatsAppUrlForEnroll() {
-    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course (PKR 3,000).");
+    return getWhatsAppUrl("Hi! I want to enroll in the AI Automation course (PKR 3,000).");
 }
 
 function getWhatsAppUrlForContact(name, message) {
@@ -42,5 +42,5 @@ function getWhatsAppUrlWithTrack(trackName) {
 }
 
 function getWhatsAppUrlDefault() {
-    return getWhatsAppUrl("Hi! I want to enroll in the Learn AI course (PKR 3,000) + Free eBook!");
+    return getWhatsAppUrl("Hi! I want to enroll in the AI Automation course (PKR 3,000) + Free eBook!");
 }

@@ -1,5 +1,5 @@
 /* ============================================
-   LEARN AI - MAIN SCRIPT V7
+   AI AUTOMATION - MAIN SCRIPT V7
    ============================================ */
 (function () {
     'use strict';
@@ -27,6 +27,7 @@
         initDynamicMeta();
         initStickyCta();
         initSmoothAnchors();
+        initCountdownTimer();
     }
 
     function initHeroAnimation() {
@@ -464,13 +465,13 @@
 
     /* --- STICKY CTA (MOBILE) --- */
     function initStickyCta() {
-        var sticky = document.querySelector('.sticky-cta');
+        var sticky = document.getElementById('stickyEnroll');
         if (!sticky) return;
         var hero = document.querySelector('.hero');
         function toggleSticky() {
-            if (!hero) { sticky.style.display = 'none'; return; }
+            if (!hero) return;
             var heroBottom = hero.offsetTop + hero.offsetHeight;
-            if (window.scrollY > heroBottom - 100) {
+            if (window.scrollY > heroBottom - 200) {
                 sticky.style.display = 'block';
             } else {
                 sticky.style.display = 'none';
@@ -494,5 +495,46 @@
                 }
             });
         });
+    }
+
+    /* --- COUNTDOWN TIMER --- */
+    function initCountdownTimer() {
+        var timerEl = document.getElementById('countdownTimer');
+        if (!timerEl) return;
+
+        var hoursEl = document.getElementById('cd-hours');
+        var minsEl = document.getElementById('cd-mins');
+        var secsEl = document.getElementById('cd-secs');
+        if (!hoursEl || !minsEl || !secsEl) return;
+
+        var STORAGE_KEY = 'countdown_end';
+        var DEFAULT_HOURS = 12;
+
+        var endTime = localStorage.getItem(STORAGE_KEY);
+        if (!endTime || Date.now() > parseInt(endTime)) {
+            endTime = Date.now() + DEFAULT_HOURS * 60 * 60 * 1000;
+            localStorage.setItem(STORAGE_KEY, endTime);
+        } else {
+            endTime = parseInt(endTime);
+        }
+
+        function update() {
+            var diff = endTime - Date.now();
+            if (diff <= 0) {
+                hoursEl.textContent = '00';
+                minsEl.textContent = '00';
+                secsEl.textContent = '00';
+                return;
+            }
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            hoursEl.textContent = h < 10 ? '0' + h : h;
+            minsEl.textContent = m < 10 ? '0' + m : m;
+            secsEl.textContent = s < 10 ? '0' + s : s;
+        }
+
+        update();
+        setInterval(update, 1000);
     }
 })();
