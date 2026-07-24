@@ -1006,13 +1006,6 @@ body.modal-open{overflow:hidden}
 /* ============================================
    STICKY MOBILE ENROLL BAR
    ============================================ */
-.sticky-enroll{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:10px 16px;background:var(--white);border-top:2px solid var(--blue-500);box-shadow:0 -4px 20px rgba(0,0,0,.12)}
-.sticky-enroll-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:600px;margin:0 auto}
-.sticky-enroll-text{flex:1;min-width:0}
-.sticky-enroll-text .price-tag{font-size:1rem;font-weight:800;color:var(--text-primary);line-height:1.2}
-.sticky-enroll-text .sub{font-size:.7rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sticky-enroll .btn{flex-shrink:0;padding:10px 20px;font-size:.85rem;white-space:nowrap}
-
 /* ============================================
    ENHANCED RESPONSIVE
    ============================================ */
@@ -1048,7 +1041,6 @@ body.modal-open{overflow:hidden}
     .cta-banner p{font-size:.9rem}
     .btn-xl{padding:14px 24px;font-size:.95rem}
     .btn-lg{padding:12px 24px;font-size:.92rem}
-    .sticky-enroll{display:block}
     .footer-grid{grid-template-columns:1fr;gap:24px}
     .footer-col{text-align:center}
     .footer-col h4{margin-bottom:12px}
@@ -1073,6 +1065,4 @@ body.modal-open{overflow:hidden}
     .countdown-unit .num{font-size:1.1rem}
     .pricing-card{padding:24px 20px}
     .pricing-features li{font-size:.8rem;padding:6px 0}
-    .sticky-enroll-text .price-tag{font-size:.9rem}
-    .sticky-enroll-text .sub{font-size:.65rem}
 }

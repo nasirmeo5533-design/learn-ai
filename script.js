@@ -465,20 +465,6 @@
 
     /* --- STICKY CTA (MOBILE) --- */
     function initStickyCta() {
-        var sticky = document.getElementById('stickyEnroll');
-        if (!sticky) return;
-        var hero = document.querySelector('.hero');
-        function toggleSticky() {
-            if (!hero) return;
-            var heroBottom = hero.offsetTop + hero.offsetHeight;
-            if (window.scrollY > heroBottom - 200) {
-                sticky.style.display = 'block';
-            } else {
-                sticky.style.display = 'none';
-            }
-        }
-        window.addEventListener('scroll', toggleSticky, { passive: true });
-        toggleSticky();
     }
 
     /* --- SMOOTH ANCHOR SCROLL --- */
