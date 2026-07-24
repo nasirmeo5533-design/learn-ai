@@ -1,4 +1,4 @@
-const CONFIG = {
+﻿const CONFIG = {
     whatsappNumber: "923703159642",
     whatsappDisplayNumber: "+92 370 3159642",
     ebook1Title: "The Generative AI Specialist by Abeer Nasir",
@@ -9,7 +9,7 @@ const CONFIG = {
     ga4TrackingId: "G-MEASUREMENT_ID",
     siteUrl: "https://learn-ai-sable-phi.vercel.app",
     siteName: "AI Automation Platform",
-    siteDescription: "AI Automation step-by-step in 30 days - no coding required. Master no-code AI tools for business automation, content creation & chatbot building.",
+    siteDescription: "AI Automation step-by-step in 30 days (90-day extended access) - no coding required. Master no-code AI tools for business automation, content creation & chatbot building.",
     supabaseUrl: "https://njnbcjuoomyydzefvkqq.supabase.co",
     supabaseAnonKey: "sb_publishable_Z1WOq7jn1EpG1Lu_ZPowwg_dsajE",
     adminEmail: "abeerinfo5566@gmail.com",

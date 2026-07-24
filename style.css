@@ -375,6 +375,15 @@ body.announcement-hidden .page-header{padding-top:calc(var(--header-height) + 20
 .footer-links a{font-size:.82rem;color:var(--slate-500)}
 .footer-links a:hover{color:var(--blue-400)}
 
+/* --- PAYMENT ICONS --- */
+.footer-payments{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.payment-label{font-size:.72rem;color:var(--slate-500);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.payment-icons{display:flex;align-items:center;gap:10px}
+.payment-icon{display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);transition:all .2s ease}
+.payment-icon:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.payment-icon svg{flex-shrink:0}
+.payment-icon span{font-size:.72rem;font-weight:600;color:var(--slate-400)}
+
 /* --- FLOATING WHATSAPP --- */
 .whatsapp-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:999;transition:all var(--transition-base);animation:wa-pulse 2.5s infinite}
 .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.45)}
@@ -719,7 +728,6 @@ body.modal-open{overflow:hidden}
     .dash-grid{grid-template-columns:1fr}
     .dashboard-body{grid-template-columns:1fr}
     .container{padding:0 16px}
-    .sticky-cta{display:block}
     .announcement-msg{font-size:.72rem;white-space:normal;line-height:1.4;padding:0 36px 0 12px}
     .announcement-bar{height:auto;min-height:40px;padding:6px 0}
 }
@@ -1044,6 +1052,9 @@ body.modal-open{overflow:hidden}
     .footer-grid{grid-template-columns:1fr;gap:24px}
     .footer-col{text-align:center}
     .footer-col h4{margin-bottom:12px}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .footer-payments{justify-content:center}
+    .payment-icons{justify-content:center}
 }
 @media(max-width:480px){
     .hero h1{font-size:1.5rem}
